@@ -8,6 +8,17 @@ keycloak:
   realm: fiap-keycloak
 
 spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: seu.email@gmail.com
+    password: sua_senha_ou_app_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
   profiles:
     active: dev
   security:
