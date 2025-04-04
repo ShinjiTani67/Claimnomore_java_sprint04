@@ -24,3 +24,4 @@ https://www.youtube.com/watch?v=O5D_YSpjp6Y
 
 ## Instalação
 - Clone o Repositório
+https://github.com/ShinjiTani67/Claimnomore_java_sprint04.git
