@@ -19,6 +19,6 @@ public class ClaimDTO {
     private long id;
 
     private ZonedDateTime claimDate;
-    
+
     private String description;
 }
