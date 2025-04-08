@@ -10,6 +10,7 @@ keycloak:
 spring:
   data:
     mongodb:
+      uri: mongodb://localhost:27017/"seuBanco"
       host: localhost
       port: 27017
       database: "nomeDoSeuBanco"
