@@ -1,4 +1,4 @@
-package fiap.com.br.demo;
+package br.com.fiap.ja.ecommerce;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -33,4 +33,6 @@ public class StmpConfig {
         return mailSender;
 
     }
+
+
 }
