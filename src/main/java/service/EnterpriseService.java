@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import repository.EnterpriseRepository;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -20,15 +21,15 @@ public class EnterpriseService {
         return enterpriseRepository.findAll();
     }
 
-    public Optional<Enterprise> getEnterpriseById(Long id) {
-        return enterpriseRepository.findById(id);
+    public Optional<Enterprise> getEnterpriseById(UUID uuid) {
+        return enterpriseRepository.findById(uuid);
     }
 
     public Enterprise saveEnterprise(Enterprise enterprise) {
         return (Enterprise) enterpriseRepository.save(enterprise);
     }
 
-    public void deleteEnterprise(Long id) {
-        enterpriseRepository.deleteById(id);
+    public void deleteEnterprise(UUID uuid) {
+        enterpriseRepository.deleteById(uuid);
     }
 }

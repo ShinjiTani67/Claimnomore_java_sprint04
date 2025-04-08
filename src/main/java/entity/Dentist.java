@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.UUID;
+
 @Data
 @ToString
 @Entity
@@ -13,7 +15,7 @@ public class Dentist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private UUID uuid;
 
     @Column(name = "name_dentist", length = 100, nullable = false)
     private String name;

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 
+import java.util.UUID;
+
 @Data
 @ToString
 @Entity
@@ -12,7 +14,7 @@ public class Enterprise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    private UUID uuid;
 
     @Column(name = "adress_dentist", length = 100, nullable = false)
     private String adress;

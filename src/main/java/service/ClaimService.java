@@ -4,7 +4,6 @@ import entity.Claim;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import repository.ClaimRepository;
-
 import java.util.List;
 import java.util.Optional;
 

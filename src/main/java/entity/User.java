@@ -6,6 +6,8 @@ import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.UUID;
+
 
 @Data
 @ToString
@@ -15,7 +17,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private UUID uuid;
 
     @Column(name = "email_user", length = 100, nullable = false)
     private String email;
