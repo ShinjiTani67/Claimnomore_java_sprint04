@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 
 @Service
 @AllArgsConstructor
@@ -22,17 +24,17 @@ public class DentistService {
         return dentistRepository.findAll();
     }
 
-    public Optional<Dentist> getDentistById(UUID uuid) {
-        return dentistRepository.findById(uuid);
+    public Optional<Dentist> getDentistById(Long id) {
+        return dentistRepository.findById(id);
     }
 
     public Dentist saveDentist(Dentist dentist) {
         return (Dentist) dentistRepository.save(dentist); // Removed unnecessary cast
     }
 
-    public void deleteDentist(UUID uuid) {
+    public void deleteDentist(Long id) {
 
-        dentistRepository.deleteById(uuid);
+        dentistRepository.deleteById(Long id);
     }
 
 }

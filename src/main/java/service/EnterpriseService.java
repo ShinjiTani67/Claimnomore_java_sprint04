@@ -21,15 +21,15 @@ public class EnterpriseService {
         return enterpriseRepository.findAll();
     }
 
-    public Optional<Enterprise> getEnterpriseById(UUID uuid) {
-        return enterpriseRepository.findById(uuid);
+    public Optional<Enterprise> getEnterpriseById(Long id) {
+        return enterpriseRepository.findById(id);
     }
 
     public Enterprise saveEnterprise(Enterprise enterprise) {
         return (Enterprise) enterpriseRepository.save(enterprise);
     }
 
-    public void deleteEnterprise(UUID uuid) {
-        enterpriseRepository.deleteById(uuid);
+    public void deleteEnterprise(Long id) {
+        enterpriseRepository.deleteById(id);
     }
 }

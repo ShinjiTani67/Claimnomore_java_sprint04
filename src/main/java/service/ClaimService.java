@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import repository.ClaimRepository;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -28,6 +29,6 @@ public class ClaimService {
     }
 
     public void deleteClaim(Long id) {
-        claimRepository.deleteById(uuid);
+        claimRepository.deleteById(id);
     }
 }
