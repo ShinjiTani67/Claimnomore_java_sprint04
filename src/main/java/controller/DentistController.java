@@ -38,16 +38,16 @@ public class DentistController {
     }
 
     @GetMapping("/edit/{id}")
-    public String editDentist(@PathVariable UUID uuid, Model model) {
-        Dentist dentist = dentistService.getDentistById(uuid)
+    public String editDentist(@PathVariable Long id, Model model) {
+        Dentist dentist = dentistService.getDentistById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Dentista inválido: " + id));
         model.addAttribute("dentist", dentist);
         return "dentistaformulario.html"; 
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteDentist(@PathVariable UUID uuid) {
-        dentistService.deleteDentist(uuid);
+    public String deleteDentist(@PathVariable Long id) {
+        dentistService.deleteDentist(id);
         return "redirect:/dentist/list"; 
     }
 }
