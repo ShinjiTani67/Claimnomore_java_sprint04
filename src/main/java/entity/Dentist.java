@@ -3,14 +3,14 @@ package entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.UUID;
 
 @Data
 @ToString
-@Entity
-@Table(name="DENTISTA")
+@Document(collection ="DENTISTA")
 public class Dentist {
 
     @Id

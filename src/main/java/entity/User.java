@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.UUID;
@@ -11,8 +12,7 @@ import java.util.UUID;
 
 @Data
 @ToString
-@Entity
-@Table(name="USUARIO")
+@Document(collection ="USUARIO")
 public class User {
 
     @Id

@@ -3,6 +3,7 @@ package entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.ZonedDateTime;
 import java.util.UUID;
@@ -10,8 +11,7 @@ import java.util.UUID;
 
 @Data
 @ToString
-@Entity
-@Table(name = "SINISTRO")
+@Document(collection = "SINISTRO")
 public class Claim {
 
     @Id
