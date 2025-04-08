@@ -1,10 +1,12 @@
 package repository;
 
 import entity.Claim;
-import java.util.List;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import java.util.Optional;
+import java.util.UUID;
 
-public interface ClaimRepository extends MongoRepository<Long, id > {
+public interface ClaimRepository extends MongoRepository {
 
-    List<Claim> findByNome(long id);
+    Optional<Claim> findByUuid(UUID uuid);
 
 }
