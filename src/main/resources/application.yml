@@ -8,6 +8,11 @@ keycloak:
   realm: fiap-keycloak
 
 spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: "nomeDoSeuBanco"
   mail:
     host: smtp.gmail.com
     port: 587

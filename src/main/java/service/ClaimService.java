@@ -29,6 +29,6 @@ public class ClaimService {
     }
 
     public void deleteClaim(Long id) {
-        claimRepository.deleteById(id);
+        claimRepository.deleteById(uuid);
     }
 }
