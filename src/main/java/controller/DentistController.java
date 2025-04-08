@@ -9,6 +9,7 @@ import repository.DentistRepository;
 import service.DentistService;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/dentist")
@@ -37,16 +38,16 @@ public class DentistController {
     }
 
     @GetMapping("/edit/{id}")
-    public String editDentist(@PathVariable Long id, Model model) {
-        Dentist dentist = dentistService.getDentistById(id)
+    public String editDentist(@PathVariable UUID uuid, Model model) {
+        Dentist dentist = dentistService.getDentistById(uuid)
                 .orElseThrow(() -> new IllegalArgumentException("Dentista inválido: " + id));
         model.addAttribute("dentist", dentist);
         return "dentistaformulario.html"; 
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteDentist(@PathVariable Long id) {
-        dentistService.deleteDentist(id);
+    public String deleteDentist(@PathVariable UUID uuid) {
+        dentistService.deleteDentist(uuid);
         return "redirect:/dentist/list"; 
     }
 }
