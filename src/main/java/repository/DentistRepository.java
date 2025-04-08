@@ -1,4 +1,4 @@
 package repository;
 
-public class DentistRepository {
+public interface DentistRepository extends MongoRepository<Long, id >{
 }

@@ -1,4 +1,4 @@
 package repository;
 
-public class EnterpriseRepository {
+public interface EnterpriseRepository extends MongoRepository<Long, id > {
 }
