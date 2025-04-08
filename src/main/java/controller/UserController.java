@@ -39,8 +39,8 @@ public class UserController {
     }
 
     @GetMapping("/edit/{id}")
-    public String editUser(@PathVariable UUID uuid, Model model) {
-        User user = userService.getUserById(uuid).orElseThrow(() -> new IllegalArgumentException("Invalid user ID: " + id));
+    public String editUser(@PathVariable Long id, Model model) {
+        User user = userService.getUserById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user ID: " + id));
         model.addAttribute("user", user);
         return "userformulario";
     }
