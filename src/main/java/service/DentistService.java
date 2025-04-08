@@ -25,7 +25,7 @@ public class DentistService {
     }
 
     public Optional<Dentist> getDentistById(Long id) {
-        return dentistRepository.findById(id);
+        return dentistRepository.findById(String.valueOf(id));
     }
 
     public Dentist saveDentist(Dentist dentist) {
@@ -34,7 +34,7 @@ public class DentistService {
 
     public void deleteDentist(Long id) {
 
-        dentistRepository.deleteById(Long id);
+        dentistRepository.deleteById(String.valueOf(id));
     }
 
 }

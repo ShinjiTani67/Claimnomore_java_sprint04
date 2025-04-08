@@ -21,7 +21,7 @@ public class ClaimService {
     }
 
     public Optional<Claim> getClaimById(Long id) {
-        return claimRepository.findById(id);
+        return claimRepository.findById(String.valueOf(id));
     }
 
     public Claim saveClaim(Claim claim) {
@@ -29,6 +29,6 @@ public class ClaimService {
     }
 
     public void deleteClaim(Long id) {
-        claimRepository.deleteById(id);
+        claimRepository.deleteById(String.valueOf(id));
     }
 }

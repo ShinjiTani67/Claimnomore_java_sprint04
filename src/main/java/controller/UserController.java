@@ -10,6 +10,8 @@ import service.UserService;
 import java.util.List;
 import java.util.UUID;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -44,8 +46,8 @@ public class UserController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteUser(@PathVariable UUID uuid) {
-        userService.deleteUser(uuid);
+    public String deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
         return "redirect:/user/list";
     }
 }

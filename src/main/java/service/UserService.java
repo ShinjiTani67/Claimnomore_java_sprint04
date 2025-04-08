@@ -20,15 +20,15 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Optional<User> getUserById(UUID uuid) {
-        return userRepository.findById(uuid);
+    public Optional<User> getUserById(Long id) {
+        return userRepository.findById(String.valueOf(id));
     }
 
     public User saveUser(User user) {
         return (User) userRepository.save(user);
     }
 
-    public void deleteUser(UUID uuid) {
-        userRepository.deleteById(uuid);
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
     }
 }

@@ -22,7 +22,7 @@ public class EnterpriseService {
     }
 
     public Optional<Enterprise> getEnterpriseById(Long id) {
-        return enterpriseRepository.findById(id);
+        return enterpriseRepository.findById(String.valueOf(id));
     }
 
     public Enterprise saveEnterprise(Enterprise enterprise) {
@@ -30,6 +30,6 @@ public class EnterpriseService {
     }
 
     public void deleteEnterprise(Long id) {
-        enterpriseRepository.deleteById(id);
+        enterpriseRepository.deleteById(String.valueOf(id));
     }
 }
