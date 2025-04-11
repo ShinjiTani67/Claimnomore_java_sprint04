@@ -8,6 +8,6 @@ class ClaimnomoreApplicationTests {
 
     @Test
     void contextLoads() {
-
     }
+
 }
