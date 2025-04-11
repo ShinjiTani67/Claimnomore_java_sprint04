@@ -59,3 +59,19 @@ logging:
   level:
     root: INFO
     br: DEBUG
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # Coletar 100% das requisições (mude para menos em produção)
+  otel:
+    tracing:
+      enabled: true
+
+otel:
+  exporter:
+    jaeger:
+      endpoint: http://localhost:14250 # Porta para gRPC
+  resource:
+    attributes:
+      service.name: claimnomore-api
