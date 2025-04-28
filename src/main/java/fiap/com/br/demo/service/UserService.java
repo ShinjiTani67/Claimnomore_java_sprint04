@@ -30,6 +30,7 @@ public class UserService {
         dto.setJob(user.getJob());
         return dto;
     }
+
     private User convertToEntity(UserDTO dto){
         User user = new User();
         user.setUuid(dto.getUuid());
@@ -40,19 +41,23 @@ public class UserService {
         user.setJob(dto.getJob());
         return user;
     }
+
     public UserDTO save(UserDTO userDTO){
         User user = convertToEntity(userDTO);
         user = (User) repository.save(user);
         return convertToDTO(user);
     }
+
     public List<UserDTO> getUser(){
         return repository.findAll().stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
+
     public void deletarPorId(UUID uuid){
         repository.deleteById(uuid);
     }
+
     public UserDTO findByUuid(UUID uuid){
         Optional<User> byId = repository.findById(uuid);
         if (byId.isPresent())
