@@ -41,7 +41,7 @@ public class UserService {
         return user;
     }
     public UserDTO save(UserDTO userDTO){
-        User user = convertToDTO(userDTO);
+        User user = convertToEntity(userDTO);
         user = (User) repository.save(user);
         return convertToDTO(user);
     }
@@ -54,9 +54,9 @@ public class UserService {
         repository.deleteById(uuid);
     }
     public UserDTO findById(UUID uuid){
-        Optional<User> byId = repository.findById(id);
+        Optional<User> byId = repository.findById(uuid);
         if (byId.isPresent())
-            return convertToDTO(byId.get()){
+            return convertToDTO(byId.get());{
         }
         throw new RuntimeException("Usuario com id" + uuid + "nao encontrado");
     }
