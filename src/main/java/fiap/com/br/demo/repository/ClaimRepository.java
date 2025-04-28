@@ -1,12 +1,12 @@
-package repository;
+package fiap.com.br.demo.repository;
 
-import entity.Claim;
-import entity.Enterprise;
+import fiap.com.br.demo.entity.Claim;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
 import java.util.Optional;
 import java.util.UUID;
 
-public interface EnterpriseRepository extends MongoRepository <Enterprise, String> {
+public interface ClaimRepository extends MongoRepository<Claim, String> {
+
     Optional<Claim> findByUuid(UUID uuid);
+
 }

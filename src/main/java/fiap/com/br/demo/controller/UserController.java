@@ -1,11 +1,11 @@
-package controller;
+package fiap.com.br.demo.controller;
 
-import entity.User;
+import fiap.com.br.demo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import service.UserService;
+import fiap.com.br.demo.service.UserService;
 
 import java.util.List;
 import java.util.UUID;

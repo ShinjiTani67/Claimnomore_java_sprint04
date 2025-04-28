@@ -1,10 +1,10 @@
-package service;
+package fiap.com.br.demo.service;
 
-import entity.Dentist;
+import fiap.com.br.demo.entity.Dentist;
+import fiap.com.br.demo.repository.DentistRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.DentistRepository;
 
 import java.util.List;
 import java.util.Optional;

@@ -63,7 +63,7 @@ logging:
 management:
   tracing:
     sampling:
-      probability: 1.0 # Coletar 100% das requisições (mude para menos em produção)
+      probability: 1.0
   otel:
     tracing:
       enabled: true

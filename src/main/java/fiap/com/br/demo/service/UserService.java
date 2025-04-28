@@ -1,10 +1,10 @@
-package service;
+package fiap.com.br.demo.service;
 
 
-import entity.User;
+import fiap.com.br.demo.entity.User;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import repository.UserRepository;
+import fiap.com.br.demo.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

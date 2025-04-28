@@ -1,9 +1,9 @@
-package service;
+package fiap.com.br.demo.service;
 
-import entity.Claim;
+import fiap.com.br.demo.entity.Claim;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import repository.ClaimRepository;
+import fiap.com.br.demo.repository.ClaimRepository;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

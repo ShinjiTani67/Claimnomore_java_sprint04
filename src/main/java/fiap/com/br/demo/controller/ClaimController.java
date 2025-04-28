@@ -1,11 +1,11 @@
-package controller;
+package fiap.com.br.demo.controller;
 
-import entity.Claim;
+import fiap.com.br.demo.entity.Claim;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import service.ClaimService;
+import fiap.com.br.demo.service.ClaimService;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package entity;
+package fiap.com.br.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

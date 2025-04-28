@@ -1,7 +1,7 @@
-package repository;
+package fiap.com.br.demo.repository;
 
-import entity.Claim;
-import entity.Dentist;
+import fiap.com.br.demo.entity.Claim;
+import fiap.com.br.demo.entity.Dentist;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.Optional;
 import java.util.UUID;

@@ -1,12 +1,11 @@
-package controller;
+package fiap.com.br.demo.controller;
 
 
-import entity.Dentist;
+import fiap.com.br.demo.entity.Dentist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import repository.DentistRepository;
-import service.DentistService;
+import fiap.com.br.demo.service.DentistService;
 
 import java.util.List;
 import java.util.UUID;

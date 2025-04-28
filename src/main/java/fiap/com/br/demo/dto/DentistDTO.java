@@ -1,4 +1,4 @@
-package dto;
+package fiap.com.br.demo.dto;
 
 
 import lombok.AllArgsConstructor;

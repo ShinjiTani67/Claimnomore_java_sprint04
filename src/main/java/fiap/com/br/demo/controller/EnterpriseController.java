@@ -1,10 +1,10 @@
-package controller;
+package fiap.com.br.demo.controller;
 
 
-import entity.Enterprise;
+import fiap.com.br.demo.entity.Enterprise;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import repository.EnterpriseRepository;
+import fiap.com.br.demo.repository.EnterpriseRepository;
 
 
 import java.util.List;
