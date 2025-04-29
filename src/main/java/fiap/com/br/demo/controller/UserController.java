@@ -1,11 +1,14 @@
 package fiap.com.br.demo.controller;
 
+import fiap.com.br.demo.dto.UserDTO;
 import fiap.com.br.demo.entity.User;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import fiap.com.br.demo.service.UserService;
 
@@ -20,38 +23,34 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 @Log
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private UserService service;
 
-    @GetMapping("/list")
-    public String listUsers(Model model) {
-        List<User> users = userService.getAllUsers();
-        model.addAttribute("users", users);
-        return "user";
+    @GetMapping("/new")
+    public String newUser(Model model){
+        model.addAttribute("user", new UserDTO());
+        return "user/formulario";
     }
 
-    @GetMapping("/form")
-    public String showUserForm(Model model) {
-        model.addAttribute("user", new User());
-        return "userformulario";
-    }
-
-    @PostMapping("/save")
-    public String saveUser(@ModelAttribute User user) {
-        userService.saveUser(user);
-        return "redirect:/user/list";
+    @PostMapping("new")
+    public String salveUser(
+            @Valid @ModelAttribute("user") UserDTO userDTO,
+            BindingResult bindingResult,
+            Model model
+    ){
+        if (bindingResult.hasErrors()) {
+            log.warning("Erros de validacao ao salvar usuario:");
+            bindingResult.getAllErrors().forEach(e -> log.warning(e.toString()));
+            model.addAttribute("user", userDTO);
+            return "user/formulario";
+        }
+        log.info("Salvando usuario: " + userDTO);
+        service.save(userDTO);
+        return "redirect:/user";
     }
 
     @GetMapping("/edit/{id}")
-    public String editUser(@PathVariable Long id, Model model) {
-        User user = userService.getUserById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user ID: " + id));
-        model.addAttribute("user", user);
-        return "userformulario";
-    }
-
-    @GetMapping("/delete/{id}")
-    public String deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
-        return "redirect:/user/list";
+    public String delete(@PathVariable UUID id){
+        service.deleteById(id);
+        return "redirect:/user";
     }
 }

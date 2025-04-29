@@ -25,7 +25,7 @@ public class DentistController {
 
     @GetMapping("/new")
     public String newDentist(Model model){
-        model.addAttribute("dentist", new ClaimDTO());
+        model.addAttribute("dentist", new DentistDTO());
         return "dentist/formulario";
     }
 
