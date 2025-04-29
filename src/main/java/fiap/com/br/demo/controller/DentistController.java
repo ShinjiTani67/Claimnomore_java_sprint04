@@ -1,56 +1,54 @@
 package fiap.com.br.demo.controller;
 
 
-import fiap.com.br.demo.entity.Dentist;
+import fiap.com.br.demo.dto.ClaimDTO;
+import fiap.com.br.demo.dto.DentistDTO;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import fiap.com.br.demo.service.DentistService;
 
-import java.util.List;
 import java.util.UUID;
 
-@RestController
+
+@Controller
 @RequestMapping("/dentist")
 @AllArgsConstructor
 @Log
 public class DentistController {
 
-    @Autowired
-    private DentistService dentistService;
+    private DentistService service;
 
-    @GetMapping("/list")
-    public String listDentists(Model model) {
-        List<Dentist> dentists = dentistService.getAllDentists();
-        model.addAttribute("dentists", dentists);
-        return "dentista.html"; 
+    @GetMapping("/new")
+    public String newDentist(Model model){
+        model.addAttribute("dentist", new ClaimDTO());
+        return "dentist/formulario";
     }
 
-    @GetMapping("/form")
-    public String showDentistForm(Model model) {
-        model.addAttribute("dentist", new Dentist());
-        return "dentistaformulario.html"; 
-    }
-
-    @PostMapping("/save")
-    public String saveDentist(@ModelAttribute Dentist dentist) {
-        dentistService.saveDentist(dentist);
-        return "redirect:/dentist/list";
+    @PostMapping("new")
+    public String salveDentist(
+            @Valid @ModelAttribute("dentista") DentistDTO dentistDTO,
+            BindingResult bindingResult,
+            Model model
+    ){
+        if (bindingResult.hasErrors()) {
+            log.warning("Erros de validacao ao salvar carro:");
+            bindingResult.getAllErrors().forEach(e -> log.warning(e.toString()));
+            model.addAttribute("dentist", dentistDTO);
+            return "dentist/formulario";
+        }
+        log.info("Salvando dentista: " + dentistDTO);
+        service.save(dentistDTO);
+        return "redirect:/dentist";
     }
 
     @GetMapping("/edit/{id}")
-    public String editDentist(@PathVariable Long id, Model model) {
-        Dentist dentist = dentistService.getDentistById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Dentista inválido: " + id));
-        model.addAttribute("dentist", dentist);
-        return "dentistaformulario.html"; 
-    }
-
-    @GetMapping("/delete/{id}")
-    public String deleteDentist(@PathVariable Long id) {
-        dentistService.deleteDentist(id);
-        return "redirect:/dentist/list"; 
+    public String delete(@PathVariable UUID id){
+        service.deleteById(id);
+        return "redirect:/dentist";
     }
 }
