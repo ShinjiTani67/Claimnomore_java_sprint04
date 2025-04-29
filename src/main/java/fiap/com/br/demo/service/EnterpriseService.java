@@ -47,7 +47,7 @@ public class EnterpriseService {
                 .collect(Collectors.toList());
     }
 
-    public void deletarPorId(UUID uuid) {
+    public void deleteById(UUID uuid) {
 
         repository.deleteById(uuid);
     }
