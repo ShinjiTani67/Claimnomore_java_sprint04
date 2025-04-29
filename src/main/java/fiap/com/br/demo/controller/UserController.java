@@ -1,6 +1,8 @@
 package fiap.com.br.demo.controller;
 
 import fiap.com.br.demo.entity.User;
+import lombok.AllArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,8 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Controller
 @RequestMapping("/user")
+@AllArgsConstructor
+@Log
 public class UserController {
 
     @Autowired

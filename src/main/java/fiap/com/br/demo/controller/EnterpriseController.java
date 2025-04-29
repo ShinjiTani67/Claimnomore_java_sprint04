@@ -2,6 +2,8 @@ package fiap.com.br.demo.controller;
 
 
 import fiap.com.br.demo.entity.Enterprise;
+import lombok.AllArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import fiap.com.br.demo.repository.EnterpriseRepository;
@@ -11,6 +13,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/enterprise")
+@AllArgsConstructor
+@Log
 public class EnterpriseController {
 
     @Autowired

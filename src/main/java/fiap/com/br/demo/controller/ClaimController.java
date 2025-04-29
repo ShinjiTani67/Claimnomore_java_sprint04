@@ -1,28 +1,24 @@
 package fiap.com.br.demo.controller;
 
 import fiap.com.br.demo.dto.ClaimDTO;
-import fiap.com.br.demo.entity.Claim;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import fiap.com.br.demo.service.ClaimService;
 
-import java.util.List;
 import java.util.UUID;
 
 
 @RestController
 @RequestMapping("/claim")
 @AllArgsConstructor
-@Controller
 @Log
 public class ClaimController {
 
-    private ClaimService claimService;
+    private ClaimService service;
 
     @GetMapping("/new")
     public String newClaim(Model model){
@@ -33,23 +29,23 @@ public class ClaimController {
     @PostMapping("/save")
     public String saveClaim(
             @Valid @ModelAttribute("claim") ClaimDTO claimDTO,
-            BidingResult bidingResult,
+            BindingResult bindingResult,
             Model model
     ){
-        if (bidingResult.hasErrors()){
-            log.warn("Erro de validacao:");
-            bindingResult.getAllErrors().forEach(e -> log.warn(e.toString()));
+        if (bindingResult.hasErrors()){
+            log.warning("Erro de validacao:");
+            bindingResult.getAllErrors().forEach(e -> log.warning(e.toString()));
             model.addAttribute("claim", claimDTO);
             return "claim/formulario";
         }
-        log.info("Salvando claim: {}", claimDTO);
+        log.info("Salvando claim: {}" + claimDTO);
         service.save(claimDTO);
         return "redirect:/claim";
     }
 
     @GetMapping("/editar/{id}")
-    public String delete(@PathVariable UUID){
-        service.deletarPorIdI(uuid);
+    public String delete(@PathVariable UUID id){
+        service.deleteById(id);
         return "redirect:/claim";
     }
 }

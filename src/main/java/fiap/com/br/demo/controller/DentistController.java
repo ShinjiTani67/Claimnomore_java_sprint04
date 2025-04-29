@@ -2,6 +2,8 @@ package fiap.com.br.demo.controller;
 
 
 import fiap.com.br.demo.entity.Dentist;
+import lombok.AllArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,8 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/dentist")
+@AllArgsConstructor
+@Log
 public class DentistController {
 
     @Autowired
