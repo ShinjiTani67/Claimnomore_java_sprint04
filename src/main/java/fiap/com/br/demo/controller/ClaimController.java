@@ -1,54 +1,55 @@
 package fiap.com.br.demo.controller;
 
+import fiap.com.br.demo.dto.ClaimDTO;
 import fiap.com.br.demo.entity.Claim;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import fiap.com.br.demo.service.ClaimService;
 
 import java.util.List;
-
+import java.util.UUID;
 
 
 @RestController
 @RequestMapping("/claim")
 @AllArgsConstructor
+@Controller
+@Log
 public class ClaimController {
 
-    @Autowired
     private ClaimService claimService;
 
-    @GetMapping("/list")
-    public String listClaims(Model model) {
-        List<Claim> claims = claimService.getAllClaims();
-        model.addAttribute("claims", claims);
-        return "claim-list";
-    }
-
-    @GetMapping("/form")
-    public String showClaimForm(Model model) {
-        model.addAttribute("claim", new Claim());
-        return "claim-form";
+    @GetMapping("/new")
+    public String newClaim(Model model){
+        model.addAttribute("claim", new ClaimDTO());
+        return "claim/formulario";
     }
 
     @PostMapping("/save")
-    public String saveClaim(@ModelAttribute Claim claim) {
-        claimService.saveClaim(claim);
-        return "redirect:/claim/list";
+    public String saveClaim(
+            @Valid @ModelAttribute("claim") ClaimDTO claimDTO,
+            BidingResult bidingResult,
+            Model model
+    ){
+        if (bidingResult.hasErrors()){
+            log.warn("Erro de validacao:");
+            bindingResult.getAllErrors().forEach(e -> log.warn(e.toString()));
+            model.addAttribute("claim", claimDTO);
+            return "claim/formulario";
+        }
+        log.info("Salvando claim: {}", claimDTO);
+        service.save(claimDTO);
+        return "redirect:/claim";
     }
 
-    @GetMapping("/edit/{id}")
-    public String editClaim(@PathVariable Long id, Model model) {
-        Claim claim = claimService.getClaimById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Reclamação inválida: " + id));
-        model.addAttribute("claim", claim);
-        return "claim-form";
-    }
-
-    @GetMapping("/delete/{id}")
-    public String deleteClaim(@PathVariable Long id) {
-        claimService.deleteClaim(id);
-        return "redirect:/claim/list";
+    @GetMapping("/editar/{id}")
+    public String delete(@PathVariable UUID){
+        service.deletarPorIdI(uuid);
+        return "redirect:/claim";
     }
 }
