@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Data
 @ToString
-@Document(collection ="USUARIO")
+@Document(collection ="usuario")
 public class User {
 
     @Id

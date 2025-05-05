@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Data
 @ToString
-@Document(collection = "EMPRESA")
+@Document(collection = "empresa")
 public class Enterprise {
 
     @Id
