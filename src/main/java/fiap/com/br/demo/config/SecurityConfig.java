@@ -38,11 +38,11 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService(PasswordEncoder encoder) {
         return new InMemoryUserDetailsManager(
                 User.withUsername("admin")
-                        .password(encoder.encode("admin123"))
+                        .password(encoder.encode("admin"))
                         .roles("ADMIN")
                         .build(),
                 User.withUsername("usuario")
-                        .password(encoder.encode("usuario123"))
+                        .password(encoder.encode("usuario"))
                         .roles("USER")
                         .build()
         );
