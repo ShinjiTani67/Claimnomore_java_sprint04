@@ -15,7 +15,6 @@ import fiap.com.br.demo.service.UserService;
 import java.util.List;
 import java.util.UUID;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Controller
 @RequestMapping("/user")

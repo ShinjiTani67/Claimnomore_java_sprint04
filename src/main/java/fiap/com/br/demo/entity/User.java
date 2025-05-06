@@ -1,6 +1,7 @@
 package fiap.com.br.demo.entity;
 
-import jakarta.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.annotation.Id;
 import lombok.Data;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
@@ -16,23 +17,17 @@ import java.util.UUID;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID uuid;
 
-    @Column(name = "email_user", length = 100, nullable = false)
     private String email;
 
-    @Column(name = "name_user", length = 100, nullable = false)
     private String name;
 
-    @Column(name = "cpf", length = 100, nullable = false)
     private int CPF;
 
     @DateTimeFormat
-    @Column(name = "admission_date", length = 100, nullable = false)
     private int admissiondate;
 
-    @Column(name = "job", length = 100, nullable = false)
     private String job;
 
 }
