@@ -11,9 +11,6 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/odonto_prev
-      host: localhost
-      port: 27017
-      database: "odonto_prev"
 #  mail:
 #    host: smtp.gmail.com
 #    port: 587
@@ -71,7 +68,7 @@ management:
 otel:
   exporter:
     jaeger:
-      endpoint: http://localhost:14250 # Porta para gRPC
+      endpoint: http://localhost:14250
   resource:
     attributes:
       service.name: claimnomore-api

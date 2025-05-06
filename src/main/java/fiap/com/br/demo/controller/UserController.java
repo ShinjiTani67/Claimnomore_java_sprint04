@@ -25,6 +25,11 @@ public class UserController {
 
     private UserService service;
 
+    @GetMapping("/test")
+    public String test() {
+        return "Mongo conectado";
+    }
+
     @GetMapping("/new")
     public String newUser(Model model){
         model.addAttribute("user", new UserDTO());

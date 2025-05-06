@@ -23,6 +23,11 @@ public class DentistController {
 
     private DentistService service;
 
+    @GetMapping("/test")
+    public String test() {
+        return "Mongo conectado";
+    }
+
     @GetMapping("/new")
     public String newDentist(Model model){
         model.addAttribute("dentist", new DentistDTO());

@@ -26,6 +26,11 @@ public class EnterpriseController {
 
     private EnterpriseService service;
 
+    @GetMapping("/test")
+    public String test() {
+        return "Mongo conectado";
+    }
+
     @GetMapping("/new")
     public String newEnterprise(Model model){
         model.addAttribute("enterprise", new ClaimDTO());

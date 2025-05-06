@@ -20,6 +20,11 @@ public class ClaimController {
 
     private ClaimService service;
 
+    @GetMapping("/test")
+    public String test() {
+        return "Mongo conectado";
+    }
+
     @GetMapping("/new")
     public String newClaim(Model model){
         model.addAttribute("claim", new ClaimDTO());
