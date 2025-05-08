@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Reclamação</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>ClaimNoMore</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/user}">Usuários</a></li>
+            <li><a th:href="@{/enterprise}">Empresas</a></li>
+            <li><a th:href="@{/claim}">Reclamações</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2 th:text="${#fields.hasErrors()} ? 'Corrija os erros abaixo' : 'Formulário de Reclamação'">Formulário</h2>
+
+    <form th:action="@{/claim/new}" th:object="${claim}" method="post">
+        <div>
+            <label for="description">Descrição:</label>
+            <input type="text" id="description" th:field="*{description}" required>
+            <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+        </div>
+
+        <div>
+            <label for="status">Status:</label>
+            <select id="status" th:field="*{status}">
+                <option value="ABERTA">Aberta</option>
+                <option value="EM_ANDAMENTO">Em Andamento</option>
+                <option value="RESOLVIDA">Resolvida</option>
+            </select>
+            <span th:if="${#fields.hasErrors('status')}" th:errors="*{status}"></span>
+        </div>
+
+        <div>
+            <label for="userName">Nome do Usuário:</label>
+            <input type="text" id="userName" th:field="*{userName}" required>
+            <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span>
+        </div>
+
+        <div>
+            <label for="enterpriseName">Nome da Empresa:</label>
+            <input type="text" id="enterpriseName" th:field="*{enterpriseName}" required>
+            <span th:if="${#fields.hasErrors('enterpriseName')}" th:errors="*{enterpriseName}"></span>
+        </div>
+
+        <div>
+            <button type="submit">Salvar</button>
+            <a th:href="@{/claim}">Cancelar</a>
+        </div>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2025 ClaimNoMore</p>
+</footer>
+</body>
+</html>
