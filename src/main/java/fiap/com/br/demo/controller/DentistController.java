@@ -32,7 +32,7 @@ public class DentistController {
     @GetMapping
     public String listClaims(Model model) {
         model.addAttribute("claims", service.findAll());
-        return "home"; // Lista todas as claims
+        return "home";
     }
 
     @GetMapping("/new")
