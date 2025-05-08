@@ -25,8 +25,15 @@ public class UserController {
     private UserService service;
 
     @GetMapping("/test")
+    @ResponseBody
     public String test() {
         return "Mongo conectado";
+    }
+    
+    @GetMapping
+    public String listClaims(Model model) {
+        model.addAttribute("claims", service.findAll());
+        return "home"; 
     }
 
     @GetMapping("/new")
