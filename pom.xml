@@ -143,7 +143,6 @@
 		<dependency>
 			<groupId>org.springframework.experimental.ai</groupId>
 			<artifactId>spring-ai-openai-spring-boot-starter</artifactId>
-			<version>0.8.0</version>
 		</dependency>
 
 		<dependency>
