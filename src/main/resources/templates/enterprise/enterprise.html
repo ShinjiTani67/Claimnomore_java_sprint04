@@ -18,7 +18,6 @@
         <th>Email</th>
         <th>Telefone</th>
         <th>Endereço</th>
-        <th>Ações</th>
     </tr>
     </thead>
     <tbody>
@@ -27,7 +26,7 @@
         <td th:text="${enterprise.cnpj}">CNPJ</td>
         <td th:text="${enterprise.email}">Email</td>
         <td th:text="${enterprise.telefone}">Telefone</td>
-        <td th:text="${enterprise.endereco}">Endereço</td>
+        <td th:text="${enterprise.endereco}">Endereco</td>
         <td>
             <a th:href="@{'/enterprise/editar/' + ${enterprise.id}}">Editar</a> |
             <a th:href="@{'/enterprise/delete/' + ${enterprise.id}}" onclick="return confirm('Deseja realmente excluir?');">Excluir</a>

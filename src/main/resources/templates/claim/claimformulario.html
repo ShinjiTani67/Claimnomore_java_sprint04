@@ -13,17 +13,17 @@
             <li><a th:href="@{/}">Home</a></li>
             <li><a th:href="@{/user}">Usuários</a></li>
             <li><a th:href="@{/enterprise}">Empresas</a></li>
-            <li><a th:href="@{/claim}">Reclamações</a></li>
+            <li><a th:href="@{/claim}">Sinistro</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <h2 th:text="${#fields.hasErrors()} ? 'Corrija os erros abaixo' : 'Formulário de Reclamação'">Formulário</h2>
+    <h2 th:text="${#fields.hasErrors()} ? 'Corrija os erros abaixo' : 'Formulario de Sinistro'">Formulário</h2>
 
     <form th:action="@{/claim/new}" th:object="${claim}" method="post">
         <div>
-            <label for="description">Descrição:</label>
+            <label for="description">Descricao:</label>
             <input type="text" id="description" th:field="*{description}" required>
             <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
         </div>

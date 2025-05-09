@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Reclamações - ClaimNoMore</title>
+    <title>Reclamacoes - ClaimNoMore</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -13,36 +13,34 @@
             <li><a th:href="@{/}">Home</a></li>
             <li><a th:href="@{/user}">Usuários</a></li>
             <li><a th:href="@{/enterprise}">Empresas</a></li>
-            <li><a th:href="@{/claim}">Reclamações</a></li>
+            <li><a th:href="@{/claim}">Reclamacoes</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <h2>Lista de Reclamações</h2>
+    <h2>Lista de Reclamacoes</h2>
 
     <table border="1">
         <thead>
             <tr>
-                <th>Descrição</th>
                 <th>Status</th>
                 <th>Data</th>
                 <th>Usuário</th>
                 <th>Empresa</th>
-                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="claim : ${claims}">
-                <td th:text="${claim.description}">Descrição</td>
+                <td th:text="${claim.description}">Descricao</td>
                 <td th:text="${claim.status}">Status</td>
                 <td th:text="${claim.createdAt}">Data</td>
-                <td th:text="${claim.userName}">Usuário</td>
+                <td th:text="${claim.userName}">Usuario</td>
                 <td th:text="${claim.enterpriseName}">Empresa</td>
                 <td>
                     <a th:href="@{/claim/edit/{id}(id=${claim.uuid})}">Editar</a> |
                     <a th:href="@{/claim/delete/{id}(id=${claim.uuid})}" 
-                       onclick="return confirm('Tem certeza que deseja deletar esta reclamação?');">
+                       onclick="return confirm('Tem certeza que deseja deletar esta reclamacao?');">
                        Deletar
                     </a>
                 </td>
@@ -50,7 +48,7 @@
         </tbody>
     </table>
 
-    <a th:href="@{/claim/new}">Nova Reclamação</a>
+    <a th:href="@{/claim/new}">Nova Sinistro</a>
 </main>
 
 <footer>
