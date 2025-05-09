@@ -26,12 +26,6 @@ public class ClaimController {
         return "Mongo conectado";
     }
 
-    @GetMapping
-    public String listClaims(Model model) {
-        model.addAttribute("claims", service.findAll());
-        return "home";
-    }
-
     @GetMapping("/new")
     public String newClaim(Model model){
         model.addAttribute("claim", new ClaimDTO());

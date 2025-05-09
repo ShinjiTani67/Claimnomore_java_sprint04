@@ -32,12 +32,6 @@ public class EnterpriseController {
         return "Mongo conectado";
     }
 
-    @GetMapping
-    public String listClaims(Model model) {
-        model.addAttribute("claims", service.findAll());
-        return "home"; 
-    }
-
     @GetMapping("/new")
     public String newEnterprise(Model model){
         model.addAttribute("enterprise", new ClaimDTO());

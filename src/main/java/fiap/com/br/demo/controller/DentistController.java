@@ -29,12 +29,6 @@ public class DentistController {
         return "Mongo conectado";
     }
 
-    @GetMapping
-    public String listClaims(Model model) {
-        model.addAttribute("claims", service.findAll());
-        return "home";
-    }
-
     @GetMapping("/new")
     public String newDentist(Model model){
         model.addAttribute("dentist", new DentistDTO());

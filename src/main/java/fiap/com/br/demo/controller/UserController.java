@@ -1,18 +1,15 @@
 package fiap.com.br.demo.controller;
 
 import fiap.com.br.demo.dto.UserDTO;
-import fiap.com.br.demo.entity.User;
+import fiap.com.br.demo.repository.UserRepository;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import fiap.com.br.demo.service.UserService;
-
-import java.util.List;
 import java.util.UUID;
 
 
@@ -23,17 +20,12 @@ import java.util.UUID;
 public class UserController {
 
     private UserService service;
+    private UserRepository repository;
 
     @GetMapping("/test")
     @ResponseBody
     public String test() {
         return "Mongo conectado";
-    }
-    
-    @GetMapping
-    public String listClaims(Model model) {
-        model.addAttribute("claims", service.findAll());
-        return "home"; 
     }
 
     @GetMapping("/new")
