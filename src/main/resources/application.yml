@@ -1,13 +1,8 @@
-spring.application.name: claimnomore
-
-server:
-  port: ${SERVER_PORT:8081}
-
-keycloak:
-  auth-server-url: http://localhost:8080
-  realm: fiap-keycloak
-
 spring:
+  application:
+    name: claimnomore
+  profiles:
+    active: dev
   data:
     mongodb:
       uri: mongodb://localhost:27017/odonto_prev
@@ -22,8 +17,17 @@ spring:
           auth: true
           starttls:
             enable: true
-  profiles:
-    active: dev
+  thymeleaf:
+    cache: false
+  http:
+    encoding:
+      charset: UTF-8
+  messages:
+    basename: messages
+    encoding: UTF-8
+  devtools:
+    restart:
+      enabled: true
   security:
     oauth2:
       client:
@@ -38,26 +42,27 @@ spring:
             client-secret: secret
             scope: openid
 
-  application:
-    name: ecommerce-thymeleaf
-  thymeleaf:
-    cache: false
-  http:
-    encoding:
-      charset: UTF-8
-  messages:
-    encoding: UTF-8
-    basename: messages
-  devtools:
-    restart:
-      enabled: true
+server:
+  port: ${SERVER_PORT:8081}
+
+keycloak:
+  auth-server-url: http://localhost:8080
+  realm: fiap-keycloak
 
 logging:
   level:
     root: INFO
+    org.springframework.web: DEBUG
     br: DEBUG
 
 management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
   tracing:
     sampling:
       probability: 1.0
