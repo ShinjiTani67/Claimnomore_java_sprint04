@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Reclamacoes - ClaimNoMore</title>
+    <title>Sinistro - ClaimNoMore</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -11,22 +11,22 @@
     <nav>
         <ul>
             <li><a th:href="@{/}">Home</a></li>
-            <li><a th:href="@{/user}">Usuários</a></li>
+            <li><a th:href="@{/user}">Usuarios</a></li>
             <li><a th:href="@{/enterprise}">Empresas</a></li>
-            <li><a th:href="@{/claim}">Reclamacoes</a></li>
+            <li><a th:href="@{/claim}">Sinistro</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <h2>Lista de Reclamacoes</h2>
+    <h2>Lista de Sinistro</h2>
 
     <table border="1">
         <thead>
             <tr>
                 <th>Status</th>
                 <th>Data</th>
-                <th>Usuário</th>
+                <th>Usuario</th>
                 <th>Empresa</th>
             </tr>
         </thead>
@@ -48,7 +48,7 @@
         </tbody>
     </table>
 
-    <a th:href="@{/claim/new}">Nova Sinistro</a>
+    <a th:href="@{/claim/new}">Novo Sinistro</a>
 </main>
 
 <footer>
