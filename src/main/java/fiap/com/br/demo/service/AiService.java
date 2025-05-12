@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.*;
 
+//lembrar pq isso ta 18
 @Service
 public class AiService {
 
