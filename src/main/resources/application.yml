@@ -10,7 +10,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: shinjitanigushi@gmail.com
-    password: ${EMAIL_PASSWORD} # use variável de ambiente
+    password: ${EMAIL_PASSWORD} # use variavel de ambiente
     properties:
       mail:
         smtp:
@@ -43,7 +43,7 @@ spring:
             scope: openid
   ai:
     openai:
-      api-key: ${OPENAI_API_KEY}
+      api-key: ${OPENAI_API_KEY} # use variavel de ambiente
       chat:
         model: gpt-3.5-turbo
 
