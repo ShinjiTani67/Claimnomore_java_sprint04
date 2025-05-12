@@ -47,6 +47,7 @@ spring:
         chat:
           model: gpt-3.5-turbo
 
+
 server:
   port: ${SERVER_PORT:8081}
 
