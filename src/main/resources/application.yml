@@ -10,7 +10,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: shinjitanigushi@gmail.com
-    password: "sua_senha_ou_app_password"
+    password: ${EMAIL_PASSWORD} # use variável de ambiente
     properties:
       mail:
         smtp:
@@ -41,19 +41,14 @@ spring:
             client-id: fiap-keycloak-confidential
             client-secret: secret
             scope: openid
-    ai:
-      openai:
-        api-key: ${OPENAI_API_KEY}
-        chat:
-          model: gpt-3.5-turbo
-
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        model: gpt-3.5-turbo
 
 server:
   port: ${SERVER_PORT:8081}
-
-keycloak:
-  auth-server-url: http://localhost:8080
-  realm: fiap-keycloak
 
 logging:
   level:
