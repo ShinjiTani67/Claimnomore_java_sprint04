@@ -41,6 +41,11 @@ spring:
             client-id: fiap-keycloak-confidential
             client-secret: secret
             scope: openid
+    ai:
+      openai:
+        api-key: ${OPENAI_API_KEY}
+        chat:
+          model: gpt-3.5-turbo
 
 server:
   port: ${SERVER_PORT:8081}
