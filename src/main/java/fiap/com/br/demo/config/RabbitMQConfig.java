@@ -3,8 +3,7 @@ package fiap.com.br.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.Queue;
+import org.springframework.amqp.core.Queue;
 
 @Configuration
 public class RabbitMQConfig {
@@ -13,6 +12,6 @@ public class RabbitMQConfig {
 
     @Bean
     public Queue queue() {
-        return new Queue<>(QUEUE_NAME, true);
+        return new Queue(QUEUE_NAME, true);
     }
 }
