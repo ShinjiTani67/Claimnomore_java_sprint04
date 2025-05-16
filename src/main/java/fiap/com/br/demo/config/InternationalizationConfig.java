@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.Locale;
 
-//@Configuration
+@Configuration
 public class InternationalizationConfig implements WebMvcConfigurer {
 
     @Bean

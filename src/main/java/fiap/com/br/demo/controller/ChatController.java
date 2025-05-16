@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class AiController {
+public class ChatController {
 
     private final AiService aiService;
 
-    public AiController(AiService aiService) {
+    public ChatController(AiService aiService) {
         this.aiService = aiService;
     }
 

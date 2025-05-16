@@ -16,7 +16,7 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: shinjitanigushi@gmail.com
+    username: rm553587@fiap.com.br
     password: ${EMAIL_PASSWORD} # use variavel de ambiente
     properties:
       mail:
