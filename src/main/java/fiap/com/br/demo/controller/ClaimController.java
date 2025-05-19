@@ -22,7 +22,7 @@ public class ClaimController {
     private ClaimService service;
     private ClaimRepository repository;
 
-    @GetMapping("claim")
+    @GetMapping
     public String listClaim(Model model){
         model.addAttribute("claim", service.getAllClaims());
         return "claim";

@@ -37,7 +37,7 @@ public class UserController {
     @GetMapping("/new")
     public String newUser(Model model){
         model.addAttribute("user", new UserDTO());
-        return "user/formulario";
+        return "userformulario";
     }
 
     @PostMapping("new")
@@ -54,12 +54,12 @@ public class UserController {
         }
         log.info("Salvando usuario: " + userDTO);
         service.save(userDTO);
-        return "redirect:/user";
+        return "redirect:user";
     }
 
     @GetMapping("/edit/{id}")
     public String delete(@PathVariable UUID id){
         service.deleteById(id);
-        return "redirect:/user";
+        return "redirect:user";
     }
 }

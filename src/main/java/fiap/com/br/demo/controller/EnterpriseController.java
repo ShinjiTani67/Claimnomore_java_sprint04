@@ -27,7 +27,7 @@ public class EnterpriseController {
     private EnterpriseService service;
     private EnterpriseRepository repository;
 
-    @GetMapping("/enterprise")
+    @GetMapping
     public String listEnterprise(Model model){
         model.addAttribute("enterprise", service.getEnterprise());
         return "enterprise";

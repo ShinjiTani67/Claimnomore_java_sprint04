@@ -25,7 +25,7 @@ public class DentistController {
     private DentistService service;
     private DentistRepository repository;
 
-    @GetMapping("dentist")
+    @GetMapping
     public String listDentist(Model model){
         model.addAttribute("dentist", service.getAllDentists());
         return "dentist";
