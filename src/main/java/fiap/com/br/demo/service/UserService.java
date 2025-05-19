@@ -63,5 +63,4 @@ public class UserService {
         }
         throw new RuntimeException("Usuario com id" + uuid + "nao encontrado");
     }
-
 }
