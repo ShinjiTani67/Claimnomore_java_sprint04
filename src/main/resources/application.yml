@@ -56,8 +56,9 @@ spring:
 
 server:
   port: ${SERVER_PORT:8081}
-
-logging:
+  error:
+    whitelabel:
+      enabled: false
   level:
     root: INFO
     org.springframework.web: DEBUG
@@ -85,3 +86,5 @@ otel:
   resource:
     attributes:
       service.name: claimnomore-api
+
+
