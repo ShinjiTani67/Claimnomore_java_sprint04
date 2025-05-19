@@ -22,6 +22,12 @@ public class UserController {
     private UserService service;
     private UserRepository repository;
 
+    @GetMapping("/user")
+    public String listUsers(Model model) {
+        model.addAttribute("users", service.findAll());
+        return "user";
+    }
+
     @GetMapping("/test")
     @ResponseBody
     public String test() {
