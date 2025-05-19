@@ -25,6 +25,13 @@ import java.util.UUID;
 public class EnterpriseController {
 
     private EnterpriseService service;
+    private EnterpriseRepository repository;
+
+    @GetMapping("/enterprise")
+    public String listEnterprise(Model model){
+        model.addAttribute("enterprise" service.findAll());
+        return "enterprise";
+    }
 
     @GetMapping("/test")
     @ResponseBody
