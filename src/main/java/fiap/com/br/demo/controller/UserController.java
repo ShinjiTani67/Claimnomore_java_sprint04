@@ -22,7 +22,7 @@ public class UserController {
     private UserService service;
     private UserRepository repository;
 
-    @GetMapping("/user")
+    @GetMapping
     public String listUsers(Model model) {
         model.addAttribute("users", service.getUser());
         return "user";
