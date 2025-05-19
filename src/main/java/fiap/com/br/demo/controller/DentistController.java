@@ -3,6 +3,7 @@ package fiap.com.br.demo.controller;
 
 import fiap.com.br.demo.dto.ClaimDTO;
 import fiap.com.br.demo.dto.DentistDTO;
+import fiap.com.br.demo.repository.DentistRepository;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
@@ -22,6 +23,13 @@ import java.util.UUID;
 public class DentistController {
 
     private DentistService service;
+    private DentistRepository repository;
+
+    @GetMapping("dentist")
+    public String listDentist(Model model){
+        model.addAttribute("dentist" service.findAll());
+        return "dentist";
+    }
 
     @GetMapping("/test")
     @ResponseBody
