@@ -1,6 +1,7 @@
 package fiap.com.br.demo.controller;
 
 import fiap.com.br.demo.dto.ClaimDTO;
+import fiap.com.br.demo.repository.ClaimRepository;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
@@ -19,6 +20,13 @@ import java.util.UUID;
 public class ClaimController {
 
     private ClaimService service;
+    private ClaimRepository repository;
+
+    @GetMapping("claim")
+    public String listClaim(Model model){
+        model.addAttribute("claim", service.findAll());
+        return "claim";
+    }
 
     @GetMapping("/test")
     @ResponseBody
