@@ -37,7 +37,7 @@ public class ClaimController {
     @GetMapping("/new")
     public String newClaim(Model model){
         model.addAttribute("claim", new ClaimDTO());
-        return "claim/formulario";
+        return "claimformulario";
     }
 
     @PostMapping("/save")

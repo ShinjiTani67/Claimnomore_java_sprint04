@@ -42,7 +42,7 @@ public class EnterpriseController {
     @GetMapping("/new")
     public String newEnterprise(Model model){
         model.addAttribute("enterprise", new ClaimDTO());
-        return "enterprise/formulario";
+        return "enterpriseformulario";
     }
 
     @PostMapping("new")
