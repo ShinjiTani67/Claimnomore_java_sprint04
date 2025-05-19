@@ -29,7 +29,7 @@ public class EnterpriseController {
 
     @GetMapping("/enterprise")
     public String listEnterprise(Model model){
-        model.addAttribute("enterprise", service.findAll());
+        model.addAttribute("enterprise", service.getEnterprise());
         return "enterprise";
     }
 

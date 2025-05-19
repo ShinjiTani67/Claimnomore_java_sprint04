@@ -24,7 +24,7 @@ public class ClaimController {
 
     @GetMapping("claim")
     public String listClaim(Model model){
-        model.addAttribute("claim", service.findAll());
+        model.addAttribute("claim", service.getAllClaims());
         return "claim";
     }
 
