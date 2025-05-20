@@ -5,6 +5,7 @@ import fiap.com.br.demo.repository.UserRepository;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,6 +20,7 @@ import java.util.UUID;
 @Log
 public class UserController {
 
+    @Autowired
     private UserService service;
     private UserRepository repository;
 
