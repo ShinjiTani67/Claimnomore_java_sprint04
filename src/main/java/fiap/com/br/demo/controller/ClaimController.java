@@ -51,7 +51,7 @@ public class ClaimController {
             log.warning("Erro de validacao:");
             bindingResult.getAllErrors().forEach(e -> log.warning(e.toString()));
             model.addAttribute("claim", claimDTO);
-            return "claim/formulario";
+            return "claimformulario";
         }
         log.info("Salvando claim: {}" + claimDTO);
         service.save(claimDTO);
