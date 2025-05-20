@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 
@@ -23,10 +24,9 @@ public class User {
 
     private String name;
 
-    private int CPF;
+    private String cpf;
 
-    @DateTimeFormat
-    private int admissiondate;
+    private LocalDate admissiondate;
 
     private String job;
 

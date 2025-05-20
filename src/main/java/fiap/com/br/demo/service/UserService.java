@@ -21,7 +21,7 @@ public class UserService {
     private UserDTO convertToDTO(User user){
         UserDTO dto = new UserDTO();
         dto.setUuid(user.getUuid());
-        dto.setCPF(user.getCPF());
+        dto.setCpf(user.getCpf());
         dto.setName(user.getName());
         dto.setEmail(user.getEmail());
         dto.setAdmissiondate(user.getAdmissiondate());
@@ -32,7 +32,7 @@ public class UserService {
     private User convertToEntity(UserDTO dto){
         User user = new User();
         user.setUuid(dto.getUuid());
-        user.setCPF(dto.getCPF());
+        user.setCpf(dto.getCpf());
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
         user.setAdmissiondate(dto.getAdmissiondate());

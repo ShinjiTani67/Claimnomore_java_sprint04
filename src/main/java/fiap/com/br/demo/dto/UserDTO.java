@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Data
@@ -18,9 +19,9 @@ public class UserDTO {
 
     private String name;
 
-    private int CPF;
+    private String cpf;
 
-    private int admissiondate;
+    private LocalDate admissiondate;
 
     private String job;
 }
