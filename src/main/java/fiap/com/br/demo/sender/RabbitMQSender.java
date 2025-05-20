@@ -1,5 +1,6 @@
-package fiap.com.br.demo.config;
+package fiap.com.br.demo.sender;
 
+import fiap.com.br.demo.config.RabbitMQConfig;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 

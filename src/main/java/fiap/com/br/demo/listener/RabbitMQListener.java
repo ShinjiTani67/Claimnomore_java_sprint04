@@ -1,5 +1,6 @@
-package fiap.com.br.demo.config;
+package fiap.com.br.demo.listener;
 
+import fiap.com.br.demo.config.RabbitMQConfig;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 
 public class RabbitMQListener {
