@@ -17,33 +17,33 @@
 
     <form th:action="@{/user/new}" method="post" th:object="${user}">
         <div class="mb-3">
-            <label class="form-label">Nome</label>
-            <input type="text" class="form-control" th:field="*{name}" required>
-            <small class="text-danger" th:errors="*{name}"></small>
+            <label class="form-label" for="name">Nome</label>
+            <input type="text" id="name" class="form-control" th:field="*{name}" required>
+            <small class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" th:field="*{email}" required>
-            <small class="text-danger" th:errors="*{email}"></small>
+            <label class="form-label" for="email">Email</label>
+            <input type="email" id="email" class="form-control" th:field="*{email}" required>
+            <small class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">CPF</label>
-            <input type="text" class="form-control" th:field="*{CPF}" required>
-            <small class="text-danger" th:errors="*{CPF}"></small>
+            <label class="form-label" for="cpf">CPF</label>
+            <input type="text" id="cpf" class="form-control" th:field="*{cpf}" required>
+            <small class="text-danger" th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></small>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Data de Admissão</label>
-            <input type="date" class="form-control" th:field="*{admissiondate}" required>
-            <small class="text-danger" th:errors="*{admissiondate}"></small>
+            <label class="form-label" for="admissionDate">Data de Admissão</label>
+            <input type="date" id="admissionDate" class="form-control" th:field="*{admissionDate}" required>
+            <small class="text-danger" th:if="${#fields.hasErrors('admissionDate')}" th:errors="*{admissionDate}"></small>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Cargo</label>
-            <input type="text" class="form-control" th:field="*{job}" required>
-            <small class="text-danger" th:errors="*{job}"></small>
+            <label class="form-label" for="job">Cargo</label>
+            <input type="text" id="job" class="form-control" th:field="*{job}" required>
+            <small class="text-danger" th:if="${#fields.hasErrors('job')}" th:errors="*{job}"></small>
         </div>
 
         <button type="submit" class="btn btn-success">Salvar</button>
