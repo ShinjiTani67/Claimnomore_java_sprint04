@@ -5,6 +5,7 @@ import fiap.com.br.demo.repository.ClaimRepository;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,7 @@ import fiap.com.br.demo.service.ClaimService;
 import java.util.UUID;
 
 
-@RestController
+@Controller
 @RequestMapping("/claim")
 @AllArgsConstructor
 @Log
@@ -24,7 +25,7 @@ public class ClaimController {
 
     @GetMapping
     public String listClaim(Model model){
-        model.addAttribute("claim", service.getAllClaims());
+        model.addAttribute("claims", service.getAllClaims());
         return "claim";
     }
 

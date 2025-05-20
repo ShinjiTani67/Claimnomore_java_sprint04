@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ import fiap.com.br.demo.repository.EnterpriseRepository;
 import java.util.List;
 import java.util.UUID;
 
-@RestController
+@Controller
 @RequestMapping("/enterprise")
 @AllArgsConstructor
 @Log
@@ -29,7 +30,7 @@ public class EnterpriseController {
 
     @GetMapping
     public String listEnterprise(Model model){
-        model.addAttribute("enterprise", service.getEnterprise());
+        model.addAttribute("enterprises", service.getEnterprise());
         return "enterprise";
     }
 
