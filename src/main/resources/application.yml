@@ -26,6 +26,13 @@ spring:
             enable: true
   thymeleaf:
     cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    check-template-location: true
+    servlet:
+      content-type: text/html
   http:
     encoding:
       charset: UTF-8
@@ -86,5 +93,3 @@ otel:
   resource:
     attributes:
       service.name: claimnomore-api
-
-

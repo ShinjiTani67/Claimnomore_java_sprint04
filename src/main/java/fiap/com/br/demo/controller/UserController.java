@@ -22,6 +22,7 @@ public class UserController {
     private UserService service;
     private UserRepository repository;
 
+
     @GetMapping
     public String listUsers(Model model) {
         model.addAttribute("users", service.getUser());
@@ -40,7 +41,7 @@ public class UserController {
         return "userformulario";
     }
 
-    @PostMapping("new")
+    @PostMapping("/new")
     public String salveUser(
             @Valid @ModelAttribute("user") UserDTO userDTO,
             BindingResult bindingResult,
@@ -54,10 +55,10 @@ public class UserController {
         }
         log.info("Salvando usuario: " + userDTO);
         service.save(userDTO);
-        return "redirect:user";
+        return "redirect:/user";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/delete/{id}")
     public String delete(@PathVariable UUID id){
         service.deleteById(id);
         return "redirect:user";
