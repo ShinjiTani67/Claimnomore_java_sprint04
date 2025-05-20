@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Formulario de Sinistro</title>
+    <title>Formulário de Sinistro</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -11,26 +11,27 @@
     <nav>
         <ul>
             <li><a th:href="@{/}">Home</a></li>
-            <li><a th:href="@{/user}">Usuarios</a></li>
+            <li><a th:href="@{/user}">Usuários</a></li>
             <li><a th:href="@{/enterprise}">Empresas</a></li>
-            <li><a th:href="@{/claim}">Sinistro</a></li>
+            <li><a th:href="@{/claim}">Sinistros</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <h2 th:text="${#fields.hasErrors()} ? 'Corrija os erros abaixo' : 'Formulario de Sinistro'">Formulario</h2>
+    <h2 th:text="${#fields.hasErrors()} ? 'Corrija os erros abaixo' : 'Formulário de Sinistro'">Formulário de Sinistro</h2>
 
-    <form th:action="@{/claim/new}" th:object="${claim}" method="post">
+    <form th:action="@{/claim/save}" th:object="${claim}" method="post">
         <div>
-            <label for="description">Descricao:</label>
+            <label for="description">Descrição:</label>
             <input type="text" id="description" th:field="*{description}" required>
             <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
         </div>
 
         <div>
             <label for="status">Status:</label>
-            <select id="status" th:field="*{status}">
+            <select id="status" th:field="*{status}" required>
+                <option value="">Selecione o status</option>
                 <option value="ABERTA">Aberta</option>
                 <option value="EM_ANDAMENTO">Em Andamento</option>
                 <option value="RESOLVIDA">Resolvida</option>
@@ -39,7 +40,7 @@
         </div>
 
         <div>
-            <label for="userName">Nome do Usuario:</label>
+            <label for="userName">Nome do Usuário:</label>
             <input type="text" id="userName" th:field="*{userName}" required>
             <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span>
         </div>
