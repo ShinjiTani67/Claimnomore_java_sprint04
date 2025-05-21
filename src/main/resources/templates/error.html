@@ -29,8 +29,11 @@
     </style>
 </head>
 <body>
-<h1>Ocorreu um erro 😢</h1>
-<p th:text="'Mensagem: ' + ${message}">Mensagem: Erro inesperado</p>
-<div class="code" th:text="'Código: ' + ${status}">Código: 500</div>
+    <h1>Ocorreu um erro </h1>
+    <p th:text="'Mensagem: ' + ${message}">Mensagem: Erro inesperado</p>
+    <p th:text="'Erro: ' + ${error}">Erro: Internal Server Error</p>
+    <p th:text="'Caminho: ' + ${path}">Caminho: /alguma-rota</p>
+    <p th:text="'Data: ' + ${timestamp}">Data: 2025-05-21T12:00:00</p>
+    <div class="code" th:text="'Código: ' + ${status}">Código: 500</div>
 </body>
 </html>
