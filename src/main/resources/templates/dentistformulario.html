@@ -11,6 +11,8 @@
 
     <form th:action="@{/dentist/save}" method="post" th:object="${dentist}">
 
+        <input type="hidden" th:field="*{id}">
+
         <div th:if="${#fields.hasErrors()}" class="alert alert-danger">
             <ul>
                 <li th:each="err : ${#fields.errors()}" th:text="${err}"></li>

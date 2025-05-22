@@ -58,7 +58,7 @@ public class DentistService {
         repository.deleteById(id);
     }
 
-    public DentistDTO findByUuid(String id) {
+    public DentistDTO findById(String id) {
         Optional<Dentist> dentist = repository.findById(id);
         if (dentist.isPresent()) {
             return convertToDTO(dentist.get());

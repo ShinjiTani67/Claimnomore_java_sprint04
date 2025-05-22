@@ -65,6 +65,18 @@ public class EnterpriseController {
     }
 
     @GetMapping("/edit/{id}")
+    public String editClaim(@PathVariable String id, Model model) {
+        try {
+            EnterpriseDTO enterpriseDTO = service.findById(id);
+            model.addAttribute("enterprise", enterpriseDTO);
+            return "enterpriseformulario";
+        } catch (RuntimeException e) {
+            log.warning("Erro ao carregar sinistro para edição: " + e.getMessage());
+            return "redirect:/enterprise";
+        }
+    }
+
+    @GetMapping("/delete/{id}")
     public String delete(@PathVariable String id){
         service.deleteById(id);
         return "redirect:/enterprise";

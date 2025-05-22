@@ -52,7 +52,7 @@ public class EnterpriseService {
         repository.deleteById(id);
     }
 
-    public EnterpriseDTO findByUuid(String id) {
+    public EnterpriseDTO findById(String id) {
 
         Optional<Enterprise> byId = repository.findById(id);
         if (byId.isPresent())

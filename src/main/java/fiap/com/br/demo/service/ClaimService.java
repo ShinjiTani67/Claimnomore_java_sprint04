@@ -50,7 +50,7 @@ public class ClaimService {
         repository.deleteById(id);
     }
 
-    public ClaimDTO findByUuid(String id) {
+    public ClaimDTO findById(String id) {
         Optional<Claim> claim = repository.findById(id);
         if (claim.isPresent()) {
             return convertToDTO(claim.get());

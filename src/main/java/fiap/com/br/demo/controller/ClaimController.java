@@ -58,7 +58,20 @@ public class ClaimController {
         return "redirect:/claim";
     }
 
-    @GetMapping("/editar/{id}")
+    @GetMapping("/edit/{id}")
+    public String editClaim(@PathVariable String id, Model model) {
+        try {
+            ClaimDTO claimDTO = service.findById(id);
+            model.addAttribute("claim", claimDTO);
+            return "claimformulario";
+
+        } catch (RuntimeException e) {
+            log.warning("Erro ao carregar sinistro para edição: " + e.getMessage());
+            return "redirect:/claim";
+        }
+    }
+
+    @GetMapping("/delete/{id}")
     public String delete(@PathVariable String id){
         service.deleteById(id);
         return "redirect:/claim";

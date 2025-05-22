@@ -56,7 +56,7 @@ public class UserService {
         repository.deleteById(id);
     }
 
-    public UserDTO findByUuid(String id){
+    public UserDTO findById(String id){
         Optional<User> byId = repository.findById(id);
         if (byId.isPresent())
             return convertToDTO(byId.get());{

@@ -10,6 +10,9 @@
     <h2 class="mb-4">Formulário de Sinistro</h2>
 
     <form th:action="@{/claim/save}" th:object="${claim}" method="post" class="needs-validation" novalidate>
+
+        <input type="hidden" th:field="*{id}">
+
         <div th:if="${#fields.hasErrors()}" class="alert alert-danger">
             <ul>
                 <li th:each="err : ${#fields.errors()}" th:text="${err}"></li>

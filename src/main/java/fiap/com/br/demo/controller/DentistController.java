@@ -62,6 +62,18 @@ public class DentistController {
     }
 
     @GetMapping("/edit/{id}")
+    public String editDentist(@PathVariable String id, Model model) {
+        try {
+            DentistDTO dentistDTO = service.findById(id);
+            model.addAttribute("dentist", dentistDTO);
+            return "dentistformulario";
+        } catch (RuntimeException e) {
+            log.warning("Erro ao carregar sinistro para edição: " + e.getMessage());
+            return "redirect:/dentist";
+        }
+    }
+
+    @GetMapping("/delete/{id}")
     public String delete(@PathVariable String id){
         service.deleteById(id);
         return "redirect:/dentist";
