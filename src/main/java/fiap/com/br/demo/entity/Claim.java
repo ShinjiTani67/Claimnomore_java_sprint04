@@ -5,6 +5,8 @@ import org.springframework.data.annotation.Id;
 import lombok.Data;
 import lombok.ToString;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
@@ -17,7 +19,7 @@ public class Claim {
     @Id
     private UUID uuid;
 
-    private ZonedDateTime claimDate;
+    private LocalDate claimDate;
 
     private String description;
 }

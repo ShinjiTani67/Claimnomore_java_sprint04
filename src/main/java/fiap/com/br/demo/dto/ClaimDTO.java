@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
@@ -15,7 +16,7 @@ public class ClaimDTO {
 
     private UUID uuid;
 
-    private ZonedDateTime claimDate;
+    private LocalDate claimDate;
 
     private String description;
 }
