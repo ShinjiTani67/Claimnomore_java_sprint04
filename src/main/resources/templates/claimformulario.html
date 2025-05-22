@@ -30,33 +30,18 @@
             </ul>
         </div>
 
+        <!-- Campo claimDate -->
+        <div class="mb-3">
+            <label for="claimDate" class="form-label">Data do Sinistro:</label>
+            <input type="datetime-local" id="claimDate" th:field="*{claimDate}" class="form-control" required />
+            <div class="text-danger" th:errors="*{claimDate}"></div>
+        </div>
+
+        <!-- Campo description -->
         <div class="mb-3">
             <label for="description" class="form-label">Descrição:</label>
             <input type="text" id="description" th:field="*{description}" class="form-control" required />
             <div class="text-danger" th:errors="*{description}"></div>
-        </div>
-
-        <div class="mb-3">
-            <label for="status" class="form-label">Status:</label>
-            <select id="status" th:field="*{status}" class="form-select" required>
-                <option value="" disabled>Selecione o status</option>
-                <option value="ABERTA">Aberta</option>
-                <option value="EM_ANDAMENTO">Em Andamento</option>
-                <option value="RESOLVIDA">Resolvida</option>
-            </select>
-            <div class="text-danger" th:errors="*{status}"></div>
-        </div>
-
-        <div class="mb-3">
-            <label for="userName" class="form-label">Nome do Usuário:</label>
-            <input type="text" id="userName" th:field="*{userName}" class="form-control" required />
-            <div class="text-danger" th:errors="*{userName}"></div>
-        </div>
-
-        <div class="mb-3">
-            <label for="enterpriseName" class="form-label">Nome da Empresa:</label>
-            <input type="text" id="enterpriseName" th:field="*{enterpriseName}" class="form-control" required />
-            <div class="text-danger" th:errors="*{enterpriseName}"></div>
         </div>
 
         <div class="mb-3">

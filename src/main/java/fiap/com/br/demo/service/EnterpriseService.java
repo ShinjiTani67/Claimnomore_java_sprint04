@@ -19,7 +19,7 @@ public class EnterpriseService {
 
     private EnterpriseDTO convertToDTO(Enterprise enterprise) {
         EnterpriseDTO dto = new EnterpriseDTO();
-        dto.setA(enterprise.getAdress());
+        dto.setAddress(enterprise.getAdress());
         dto.setId(enterprise.getUuid());
         dto.setCnpj(enterprise.getCnpj());
         dto.setPhone(enterprise.getPhone());
@@ -29,7 +29,7 @@ public class EnterpriseService {
     private Enterprise convertToEntity(EnterpriseDTO dto) {
         Enterprise enterprise = new Enterprise();
         enterprise.setUuid(dto.getId());
-        enterprise.setAdress(dto.getAdress());
+        enterprise.setAdress(dto.getAddress());
         enterprise.setCnpj(dto.getCnpj());
         enterprise.setPhone(dto.getPhone());
         return enterprise;
