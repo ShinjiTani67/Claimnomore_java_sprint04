@@ -10,4 +10,7 @@ public class ClaimnomoreApplication {
 		SpringApplication.run(ClaimnomoreApplication.class, args);
 	}
 	//rode em: http://localhost:8081
+	//rode em terminal:docker compose up
+	//rabbitmq: http://localhost:15672
+
 }
