@@ -36,6 +36,11 @@ public class ClaimService {
 
     public ClaimDTO save(ClaimDTO claimDTO) {
         Claim claim = convertToEntity(claimDTO);
+
+        if (claim.getId() == null || claim.getId().isBlank()) {
+            claim.setId(UUID.randomUUID().toString());
+        }
+
         claim = repository.save(claim);
         return convertToDTO(claim);
     }

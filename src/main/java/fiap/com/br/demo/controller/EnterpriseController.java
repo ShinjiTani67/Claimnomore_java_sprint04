@@ -30,6 +30,8 @@ public class EnterpriseController {
 
     @GetMapping
     public String listEnterprise(Model model){
+        var enterprise = service.getEnterprise();
+        enterprise.forEach(u -> log.info("ID do usuário: " + u.getId()));
         model.addAttribute("enterprises", service.getEnterprise());
         return "enterprise";
     }
@@ -70,6 +72,7 @@ public class EnterpriseController {
             EnterpriseDTO enterpriseDTO = service.findById(id);
             model.addAttribute("enterprise", enterpriseDTO);
             return "enterpriseformulario";
+
         } catch (RuntimeException e) {
             log.warning("Erro ao carregar sinistro para edição: " + e.getMessage());
             return "redirect:/enterprise";

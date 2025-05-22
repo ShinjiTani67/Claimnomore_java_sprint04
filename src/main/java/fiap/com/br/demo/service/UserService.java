@@ -30,6 +30,7 @@ public class UserService {
     }
 
     private User convertToEntity(UserDTO dto){
+
         User user = new User();
         user.setId(dto.getId());
         user.setCpf(dto.getCpf());
@@ -42,6 +43,11 @@ public class UserService {
 
     public UserDTO save(UserDTO userDTO){
         User user = convertToEntity(userDTO);
+
+        if (user.getId() == null || user.getId().isBlank()) {
+            user.setId(UUID.randomUUID().toString());
+        }
+
         user = (User) repository.save(user);
         return convertToDTO(user);
     }

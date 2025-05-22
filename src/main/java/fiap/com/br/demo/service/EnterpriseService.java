@@ -36,7 +36,13 @@ public class EnterpriseService {
     }
 
     public EnterpriseDTO save(EnterpriseDTO enterpriseDTO) {
+
         Enterprise enterprise = convertToEntity(enterpriseDTO);
+
+        if (enterprise.getId() == null || enterprise.getId().isBlank()) {
+            enterprise.setId(UUID.randomUUID().toString());
+        }
+
         enterprise = repository.save(enterprise);
         return convertToDTO(enterprise);
     }

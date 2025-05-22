@@ -26,6 +26,8 @@ public class ClaimController {
 
     @GetMapping
     public String listClaim(Model model){
+        var claim = service.getAllClaims();
+        claim.forEach(u -> log.info("ID do usuário: " + u.getId()));
         model.addAttribute("claim", service.getAllClaims());
         return "claim";
     }

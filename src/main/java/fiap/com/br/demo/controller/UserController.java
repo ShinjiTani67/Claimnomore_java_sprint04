@@ -26,8 +26,10 @@ public class UserController {
 
 
     @GetMapping
-    public String listUsers(Model model) {
-        model.addAttribute("users", service.getUser());
+    public String listUser(Model model) {
+        var user = service.getUser();
+        user.forEach(u -> log.info("ID do usuário: " + u.getId()));
+        model.addAttribute("user", service.getUser());
         return "user";
     }
 

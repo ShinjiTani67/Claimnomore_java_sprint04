@@ -43,6 +43,11 @@ public class DentistService {
 
     public DentistDTO save(DentistDTO dentistDTO) {
         Dentist dentist = convertToEntity(dentistDTO);
+
+        if (dentist.getId() == null || dentist.getId().isBlank()) {
+           dentist.setId(UUID.randomUUID().toString());
+        }
+
         dentist = repository.save(dentist);
         return convertToDTO(dentist);
     }

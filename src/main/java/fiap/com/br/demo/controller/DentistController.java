@@ -27,6 +27,8 @@ public class DentistController {
 
     @GetMapping
     public String listDentist(Model model){
+        var dentist = service.getAllDentist();
+        dentist.forEach(u -> log.info("ID do dentist: " + u.getId()));
         model.addAttribute("dentist", service.getAllDentist());
         return "dentist";
     }
