@@ -17,13 +17,13 @@ public class DentistDTO {
 
     private String name;
 
-    private int cpf;
+    private String cpf;
 
     private String cro;
 
     private String address;
 
-    private int phone;
+    private String phone;
 
     private String email;
 

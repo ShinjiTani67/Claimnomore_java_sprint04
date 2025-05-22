@@ -9,9 +9,9 @@
 <div class="container mt-5">
     <h2 class="mb-4">Formulário de Dentista</h2>
 
-    <form th:action="@{/dentist}" method="post" th:object="${dentist}">
+    <form th:action="@{/dentist/save}" method="post" th:object="${dentist}">
 
-        <input type="hidden" th:field="*{id}">
+    <input type="hidden" th:field="*{id}">
 
         <div th:if="${#fields.hasErrors()}" class="alert alert-danger">
             <ul>
@@ -33,7 +33,7 @@
 
         <div class="mb-3">
             <label class="form-label">CPF</label>
-            <input type="text" class="form-control" th:field="*{cpf}" required>
+            <input type="text" class="form-control" th:field="*{cpf}" pattern="^\d{11}$" required>
             <small class="text-danger" th:errors="*{cpf}"></small>
         </div>
 
@@ -51,7 +51,7 @@
 
         <div class="mb-3">
             <label class="form-label">Telefone</label>
-            <input type="text" class="form-control" th:field="*{phone}" required>
+            <input type="text" class="form-control" th:field="*{phone}" pattern="^\d{10,11}$" required>
             <small class="text-danger" th:errors="*{phone}"></small>
         </div>
 
