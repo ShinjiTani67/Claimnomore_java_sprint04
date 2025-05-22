@@ -57,7 +57,7 @@ public class EnterpriseController {
             log.warning("Erros de validacao ao salvar empresa:");
             bindingResult.getAllErrors().forEach(e -> log.warning(e.toString()));
             model.addAttribute("enterprise", enterpriseDTO);
-            return "enterprise/formulario";
+            return "enterpriseformulario";
         }
         log.info("Salvando empresa: " + enterpriseDTO);
         service.save(enterpriseDTO);
