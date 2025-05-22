@@ -20,9 +20,16 @@
 </header>
 
 <main class="container">
-    <h2 th:text="${#fields.hasErrors()} ? 'Corrija os erros abaixo' : 'Formulário de Sinistro'"></h2>
+
 
     <form th:action="@{/claim/save}" th:object="${claim}" method="post" class="needs-validation" novalidate>
+
+        <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+            <ul>
+                <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+            </ul>
+        </div>
+
 
         <div th:if="${#fields.hasErrors()}" class="alert alert-danger">
             <ul>
