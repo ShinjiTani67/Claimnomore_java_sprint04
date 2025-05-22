@@ -21,8 +21,11 @@ public class DentistService {
         DentistDTO dto = new DentistDTO();
         dto.setUuid(dentist.getUuid());
         dto.setName(dentist.getName());
-        dto.setCPF(dentist.getCPF());
+        dto.setCpf(dentist.getCpf());
         dto.setEmail(dentist.getEmail());
+        dto.setAddress(dentist.getAddress());
+        dto.setCro(dentist.getCro());
+        dto.setBirthdate(dentist.getBirthdate());
         return dto;
     }
 
@@ -30,8 +33,11 @@ public class DentistService {
         Dentist dentist = new Dentist();
         dentist.setUuid(dto.getUuid());
         dentist.setName(dto.getName());
-        dentist.setCPF(dto.getCPF());
+        dentist.setCpf(dto.getCpf());
         dentist.setEmail(dto.getEmail());
+        dentist.setAddress(dto.getAddress());
+        dentist.setCro(dto.getCro());
+        dentist.setBirthdate(dto.getBirthdate());
         return dentist;
     }
 
@@ -48,6 +54,7 @@ public class DentistService {
     }
 
     public void deleteById(UUID uuid) {
+
         repository.deleteById(uuid);
     }
 

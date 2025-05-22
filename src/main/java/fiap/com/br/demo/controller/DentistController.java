@@ -34,6 +34,7 @@ public class DentistController {
     @GetMapping("/test")
     @ResponseBody
     public String test() {
+
         return "Mongo conectado";
     }
 
@@ -43,7 +44,7 @@ public class DentistController {
         return "dentistformulario";
     }
 
-    @PostMapping("save")
+    @PostMapping("/save")
     public String saveDentist(
             @Valid @ModelAttribute("dentista") DentistDTO dentistDTO,
             BindingResult bindingResult,
@@ -53,7 +54,7 @@ public class DentistController {
             log.warning("Erros de validacao ao salvar carro:");
             bindingResult.getAllErrors().forEach(e -> log.warning(e.toString()));
             model.addAttribute("dentist", dentistDTO);
-            return "dentist/formulario";
+            return "dentistformulario";
         }
         log.info("Salvando dentista: " + dentistDTO);
         service.save(dentistDTO);

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -14,13 +15,17 @@ public class DentistDTO {
 
     private UUID uuid;
 
-    private String email;
-
     private String name;
 
-    private int CPF;
+    private int cpf;
 
-    private int admissiondate;
+    private String cro;
 
-    private String job;
+    private String address;
+
+    private int phone;
+
+    private String email;
+
+    private LocalDate birthdate;
 }

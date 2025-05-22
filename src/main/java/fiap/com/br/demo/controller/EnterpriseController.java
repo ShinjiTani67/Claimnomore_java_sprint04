@@ -37,6 +37,7 @@ public class EnterpriseController {
     @GetMapping("/test")
     @ResponseBody
     public String test() {
+
         return "Mongo conectado";
     }
 

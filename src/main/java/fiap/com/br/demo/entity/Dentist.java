@@ -7,6 +7,7 @@ import lombok.ToString;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Data
@@ -19,16 +20,15 @@ public class Dentist {
 
     private String name;
 
-    private int CPF;
+    private int cpf;
 
-    private String CRO;
+    private String cro;
 
-    private String adress;
+    private String address;
 
     private int phone;
 
     private String email;
 
-    @DateTimeFormat
-    private int birthdate;
+    private LocalDate birthdate;
 }
