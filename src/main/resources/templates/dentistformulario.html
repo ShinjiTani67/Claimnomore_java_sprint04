@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Formulário de Dentista</title>
@@ -11,9 +11,9 @@
 
     <form th:action="@{/dentist/save}" method="post" th:object="${dentist}">
 
-        <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+        <div th:if="${#fields.hasErrors()}" class="alert alert-danger">
             <ul>
-                <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+                <li th:each="err : ${#fields.errors()}" th:text="${err}"></li>
             </ul>
         </div>
 
@@ -36,15 +36,27 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Data de Admissão</label>
-            <input type="date" class="form-control" th:field="*{admissiondate}" required>
-            <small class="text-danger" th:errors="*{admissiondate}"></small>
+            <label class="form-label">CRO</label>
+            <input type="text" class="form-control" th:field="*{cro}" required>
+            <small class="text-danger" th:errors="*{cro}"></small>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Cargo</label>
-            <input type="text" class="form-control" th:field="*{job}" required>
-            <small class="text-danger" th:errors="*{job}"></small>
+            <label class="form-label">Endereço</label>
+            <input type="text" class="form-control" th:field="*{address}" required>
+            <small class="text-danger" th:errors="*{address}"></small>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Telefone</label>
+            <input type="text" class="form-control" th:field="*{phone}" required>
+            <small class="text-danger" th:errors="*{phone}"></small>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Data de Nascimento</label>
+            <input type="date" class="form-control" th:field="*{birthdate}" required>
+            <small class="text-danger" th:errors="*{birthdate}"></small>
         </div>
 
         <button type="submit" class="btn btn-success">Salvar</button>

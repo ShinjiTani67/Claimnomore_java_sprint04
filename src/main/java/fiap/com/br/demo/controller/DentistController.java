@@ -46,7 +46,7 @@ public class DentistController {
 
     @PostMapping("/save")
     public String saveDentist(
-            @Valid @ModelAttribute("dentista") DentistDTO dentistDTO,
+            @Valid @ModelAttribute("dentist") DentistDTO dentistDTO,
             BindingResult bindingResult,
             Model model
     ){
