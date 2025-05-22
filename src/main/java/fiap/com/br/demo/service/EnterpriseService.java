@@ -19,7 +19,7 @@ public class EnterpriseService {
 
     private EnterpriseDTO convertToDTO(Enterprise enterprise) {
         EnterpriseDTO dto = new EnterpriseDTO();
-        dto.setAdress(enterprise.getAdress());
+        dto.setA(enterprise.getAdress());
         dto.setId(enterprise.getUuid());
         dto.setCnpj(enterprise.getCnpj());
         dto.setPhone(enterprise.getPhone());

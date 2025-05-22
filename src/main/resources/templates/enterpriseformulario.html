@@ -19,34 +19,25 @@
             </ul>
         </div>
 
-        <div class="mb-3">
-            <label for="nome" class="form-label">Nome:</label>
-            <input type="text" id="nome" class="form-control" th:field="*{nome}" required />
-            <small class="text-danger" th:errors="*{nome}"></small>
-        </div>
-
+        <!-- CNPJ -->
         <div class="mb-3">
             <label for="cnpj" class="form-label">CNPJ:</label>
             <input type="text" id="cnpj" class="form-control" th:field="*{cnpj}" required />
             <small class="text-danger" th:errors="*{cnpj}"></small>
         </div>
 
+        <!-- Endereço -->
         <div class="mb-3">
-            <label for="email" class="form-label">E-mail:</label>
-            <input type="email" id="email" class="form-control" th:field="*{email}" required />
-            <small class="text-danger" th:errors="*{email}"></small>
+            <label for="address" class="form-label">Endereço:</label>
+            <input type="text" id="address" class="form-control" th:field="*{address}" />
+            <small class="text-danger" th:errors="*{address}"></small>
         </div>
 
+        <!-- Telefone -->
         <div class="mb-3">
-            <label for="telefone" class="form-label">Telefone:</label>
-            <input type="text" id="telefone" class="form-control" th:field="*{telefone}" />
-            <small class="text-danger" th:errors="*{telefone}"></small>
-        </div>
-
-        <div class="mb-3">
-            <label for="endereco" class="form-label">Endereço:</label>
-            <input type="text" id="endereco" class="form-control" th:field="*{endereco}" />
-            <small class="text-danger" th:errors="*{endereco}"></small>
+            <label for="phone" class="form-label">Telefone:</label>
+            <input type="number" id="phone" class="form-control" th:field="*{phone}" />
+            <small class="text-danger" th:errors="*{phone}"></small>
         </div>
 
         <button type="submit" class="btn btn-primary">Salvar</button>
