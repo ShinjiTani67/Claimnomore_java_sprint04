@@ -60,6 +60,13 @@ public class UserController {
         return "redirect:/user";
     }
 
+    @GetMapping("/edit/{id}")
+    public String editUser(@PathVariable String id, Model model) {
+        UserDTO user = service.findById(id);
+        model.addAttribute("user", user);
+        return "userformulario";
+    }
+
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable String id){
         service.deleteById(id);
