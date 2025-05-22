@@ -22,14 +22,14 @@
 <main class="container">
     <h2 th:text="${#fields.hasErrors()} ? 'Corrija os erros abaixo' : 'Formulário de Sinistro'"></h2>
 
-    <!-- Bloco de erros globais -->
-    <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
-        <ul>
-            <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
-        </ul>
-    </div>
-
     <form th:action="@{/claim/save}" th:object="${claim}" method="post" class="needs-validation" novalidate>
+
+        <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+            <ul>
+                <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+            </ul>
+        </div>
+
         <div class="mb-3">
             <label for="description" class="form-label">Descrição:</label>
             <input type="text" id="description" th:field="*{description}" class="form-control" required />
@@ -39,7 +39,7 @@
         <div class="mb-3">
             <label for="status" class="form-label">Status:</label>
             <select id="status" th:field="*{status}" class="form-select" required>
-                <option value="" disabled selected>Selecione o status</option>
+                <option value="" disabled>Selecione o status</option>
                 <option value="ABERTA">Aberta</option>
                 <option value="EM_ANDAMENTO">Em Andamento</option>
                 <option value="RESOLVIDA">Resolvida</option>

@@ -43,7 +43,7 @@ public class UserController {
         return "userformulario";
     }
 
-    @PostMapping("/new")
+    @PostMapping("/save")
     public String salveUser(
             @Valid @ModelAttribute("user") UserDTO userDTO,
             BindingResult bindingResult,

@@ -42,12 +42,12 @@ public class EnterpriseController {
 
     @GetMapping("/new")
     public String newEnterprise(Model model){
-        model.addAttribute("enterprise", new ClaimDTO());
+        model.addAttribute("enterprise", new EnterpriseDTO());
         return "enterpriseformulario";
     }
 
-    @PostMapping("new")
-    public String salveEnterprise(
+    @PostMapping("/save")
+    public String saveEnterprise(
             @Valid @ModelAttribute("enterprise") EnterpriseDTO enterpriseDTO,
             BindingResult bindingResult,
             Model model

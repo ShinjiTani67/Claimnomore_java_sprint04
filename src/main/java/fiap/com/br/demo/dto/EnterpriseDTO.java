@@ -13,9 +13,13 @@ public class EnterpriseDTO {
 
     private UUID id;
 
-    private String adress;
+    private String nome;
 
     private String cnpj;
 
-    private int phone;
+    private String email;
+
+    private String telefone;
+
+    private String endereco;
 }

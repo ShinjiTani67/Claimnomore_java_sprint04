@@ -9,7 +9,7 @@
 <div class="container mt-5">
     <h2 class="mb-4">Formulário de Usuário</h2>
 
-    <form th:action="@{/user/new}" method="post" th:object="${user}">
+    <form th:action="@{/user/save}" method="post" th:object="${user}">
 
         <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
             <ul>

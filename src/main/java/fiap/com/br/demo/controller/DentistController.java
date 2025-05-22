@@ -43,8 +43,8 @@ public class DentistController {
         return "dentistformulario";
     }
 
-    @PostMapping("new")
-    public String salveDentist(
+    @PostMapping("save")
+    public String saveDentist(
             @Valid @ModelAttribute("dentista") DentistDTO dentistDTO,
             BindingResult bindingResult,
             Model model
