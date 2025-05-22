@@ -30,8 +30,8 @@
             <td th:text="${claim.userName}">Usuário</td>
             <td th:text="${claim.enterpriseName}">Empresa</td>
             <td>
-                <a th:href="@{/claim/edit/{id}(id=${claim.uuid})}" class="btn btn-warning btn-sm">Editar</a>
-                <a th:href="@{/claim/delete/{id}(id=${claim.uuid})}"
+                <a th:href="@{/claim/edit/{id}(id=${claim.id})}" class="btn btn-warning btn-sm">Editar</a>
+                <a th:href="@{/claim/delete/{id}(id=${claim.id})}"
                    onclick="return confirm('Tem certeza que deseja deletar este sinistro?');"
                    class="btn btn-danger btn-sm">
                     Deletar

@@ -12,7 +12,7 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>UUID</th>
+            <th>ID</th>
             <th>Nome</th>
             <th>Email</th>
             <th>CPF</th>
@@ -23,15 +23,15 @@
         </thead>
         <tbody>
         <tr th:each="user : ${users}">
-            <td th:text="${user.uuid}"></td>
+            <td th:text="${user.id}"></td>
             <td th:text="${user.name}"></td>
             <td th:text="${user.email}"></td>
             <td th:text="${user.cpf}"></td>
             <td th:text="${#temporals.format(user.admissiondate, 'dd/MM/yyyy')}"></td>
             <td th:text="${user.job}"></td>
             <td>
-                <a th:href="@{/user/edit/{id}(id=${user.uuid})}" class="btn btn-warning btn-sm">Editar</a>
-                <a th:href="@{/user/delete/{id}(id=${user.uuid})}" class="btn btn-danger btn-sm"
+                <a th:href="@{/user/edit/{id}(id=${user.id})}" class="btn btn-warning btn-sm">Editar</a>
+                <a th:href="@{/user/delete/{id}(id=${user.id})}" class="btn btn-danger btn-sm"
                    onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
             </td>
         </tr>
