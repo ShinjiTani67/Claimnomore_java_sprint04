@@ -11,7 +11,7 @@ import java.util.UUID;
 @Data
 public class EnterpriseDTO {
 
-    private UUID id;
+    private String id;
 
     private String address;
 

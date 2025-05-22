@@ -20,7 +20,7 @@ public class ClaimService {
 
     private ClaimDTO convertToDTO(Claim claim) {
         ClaimDTO dto = new ClaimDTO();
-        dto.setUuid(claim.getUuid());
+        dto.setId(claim.getId());
         dto.setClaimDate(claim.getClaimDate());
         dto.setDescription(claim.getDescription());
         return dto;
@@ -28,7 +28,7 @@ public class ClaimService {
 
     private Claim convertToEntity(ClaimDTO dto) {
         Claim claim = new Claim();
-        claim.setUuid(dto.getUuid());
+        claim.setId(dto.getId());
         claim.setClaimDate(dto.getClaimDate());
         claim.setDescription(dto.getDescription());
         return claim;

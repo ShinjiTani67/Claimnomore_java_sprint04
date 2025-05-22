@@ -16,7 +16,7 @@ import java.util.UUID;
 public class Dentist {
 
     @Id
-    private UUID uuid;
+    private String id;
 
     private String name;
 

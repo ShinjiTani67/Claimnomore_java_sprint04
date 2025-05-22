@@ -14,7 +14,7 @@ import java.util.UUID;
 @Data
 public class ClaimDTO {
 
-    private UUID uuid;
+    private String id;
 
     private LocalDate claimDate;
 

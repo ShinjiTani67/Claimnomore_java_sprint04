@@ -14,7 +14,7 @@ import java.util.UUID;
 public class Enterprise {
 
     @Id
-    private UUID uuid;
+    private String id;
 
     private String adress;
 

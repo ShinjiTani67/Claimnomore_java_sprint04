@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Claim {
 
     @Id
-    private UUID uuid;
+    private String id;
 
     private LocalDate claimDate;
 

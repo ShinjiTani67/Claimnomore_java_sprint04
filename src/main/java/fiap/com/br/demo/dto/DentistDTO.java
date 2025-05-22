@@ -13,7 +13,7 @@ import java.util.UUID;
 @Data
 public class DentistDTO {
 
-    private UUID uuid;
+    private String id;
 
     private String name;
 

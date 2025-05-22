@@ -19,7 +19,7 @@ public class DentistService {
 
     private DentistDTO convertToDTO(Dentist dentist) {
         DentistDTO dto = new DentistDTO();
-        dto.setUuid(dentist.getUuid());
+        dto.setId(dentist.getId());
         dto.setName(dentist.getName());
         dto.setCpf(dentist.getCpf());
         dto.setEmail(dentist.getEmail());
@@ -31,7 +31,7 @@ public class DentistService {
 
     private Dentist convertToEntity(DentistDTO dto) {
         Dentist dentist = new Dentist();
-        dentist.setUuid(dto.getUuid());
+        dentist.setId(dto.getId());
         dentist.setName(dto.getName());
         dentist.setCpf(dto.getCpf());
         dentist.setEmail(dto.getEmail());
