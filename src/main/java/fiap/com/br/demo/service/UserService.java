@@ -52,15 +52,15 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
-    public void deleteById(UUID uuid){
-        repository.deleteById(uuid);
+    public void deleteById(String id){
+        repository.deleteById(id);
     }
 
-    public UserDTO findByUuid(UUID uuid){
-        Optional<User> byId = repository.findById(uuid);
+    public UserDTO findByUuid(String id){
+        Optional<User> byId = repository.findById(id);
         if (byId.isPresent())
             return convertToDTO(byId.get());{
         }
-        throw new RuntimeException("Usuario com id" + uuid + "nao encontrado");
+        throw new RuntimeException("Usuario com id" + id + "nao encontrado");
     }
 }

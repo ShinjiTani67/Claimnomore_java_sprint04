@@ -47,17 +47,17 @@ public class EnterpriseService {
                 .collect(Collectors.toList());
     }
 
-    public void deleteById(UUID uuid) {
+    public void deleteById(String id) {
 
-        repository.deleteById(uuid);
+        repository.deleteById(id);
     }
 
-    public EnterpriseDTO findByUuid(UUID uuid) {
+    public EnterpriseDTO findByUuid(String id) {
 
-        Optional<Enterprise> byId = repository.findById(uuid);
+        Optional<Enterprise> byId = repository.findById(id);
         if (byId.isPresent())
             return convertToDTO(byId.get());{
         }
-        throw new RuntimeException("Usuario com id" + uuid + "nao encontrado");
+        throw new RuntimeException("Usuario com id" + id + "nao encontrado");
     }
 }

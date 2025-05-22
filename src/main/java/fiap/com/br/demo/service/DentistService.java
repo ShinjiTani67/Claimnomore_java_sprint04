@@ -53,16 +53,16 @@ public class DentistService {
                 .collect(Collectors.toList());
     }
 
-    public void deleteById(UUID uuid) {
+    public void deleteById(String id) {
 
-        repository.deleteById(uuid);
+        repository.deleteById(id);
     }
 
-    public DentistDTO findByUuid(UUID uuid) {
-        Optional<Dentist> dentist = repository.findById(uuid);
+    public DentistDTO findByUuid(String id) {
+        Optional<Dentist> dentist = repository.findById(id);
         if (dentist.isPresent()) {
             return convertToDTO(dentist.get());
         }
-        throw new RuntimeException("Dentista com id " + uuid + " não encontrado");
+        throw new RuntimeException("Dentista com id " + id + " não encontrado");
     }
 }

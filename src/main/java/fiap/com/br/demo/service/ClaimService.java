@@ -46,15 +46,15 @@ public class ClaimService {
                 .collect(Collectors.toList());
     }
 
-    public void deleteById(UUID uuid) {
-        repository.deleteById(uuid);
+    public void deleteById(String id) {
+        repository.deleteById(id);
     }
 
-    public ClaimDTO findByUuid(UUID uuid) {
-        Optional<Claim> claim = repository.findById(uuid);
+    public ClaimDTO findByUuid(String id) {
+        Optional<Claim> claim = repository.findById(id);
         if (claim.isPresent()) {
             return convertToDTO(claim.get());
         }
-        throw new RuntimeException("Sinistro com id " + uuid + " não encontrado");
+        throw new RuntimeException("Sinistro com id " + id + " não encontrado");
     }
 }

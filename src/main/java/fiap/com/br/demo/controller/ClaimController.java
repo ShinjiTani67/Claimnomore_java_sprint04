@@ -59,7 +59,7 @@ public class ClaimController {
     }
 
     @GetMapping("/editar/{id}")
-    public String delete(@PathVariable UUID id){
+    public String delete(@PathVariable String id){
         service.deleteById(id);
         return "redirect:/claim";
     }

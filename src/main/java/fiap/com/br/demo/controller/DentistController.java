@@ -62,7 +62,7 @@ public class DentistController {
     }
 
     @GetMapping("/edit/{id}")
-    public String delete(@PathVariable UUID id){
+    public String delete(@PathVariable String id){
         service.deleteById(id);
         return "redirect:/dentist";
     }

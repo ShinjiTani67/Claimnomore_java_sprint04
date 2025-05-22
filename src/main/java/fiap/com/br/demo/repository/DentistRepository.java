@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 
-public interface DentistRepository extends MongoRepository<Dentist, UUID> {
+public interface DentistRepository extends MongoRepository<Dentist, String> {
 
-    Optional<Claim> findByUuid(UUID uuid);
+    Optional<Dentist> findById(String id);
 }

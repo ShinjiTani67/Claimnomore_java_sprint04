@@ -5,8 +5,8 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface ClaimRepository extends MongoRepository<Claim, UUID> {
+public interface ClaimRepository extends MongoRepository<Claim, String> {
 
-    Optional<Claim> findByUuid(UUID uuid);
+    Optional<Claim> findById(String id);
 
 }
