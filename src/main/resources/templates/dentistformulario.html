@@ -9,7 +9,7 @@
 <div class="container mt-5">
     <h2 class="mb-4">Formulário de Dentista</h2>
 
-    <form th:action="@{/dentist/save}" method="post" th:object="${dentist}">
+    <form th:action="@{/dentist}" method="post" th:object="${dentist}">
 
         <input type="hidden" th:field="*{id}">
 

@@ -47,7 +47,7 @@ public class DentistService {
         return convertToDTO(dentist);
     }
 
-    public List<DentistDTO> getAllDentists() {
+    public List<DentistDTO> getAllDentist() {
         return repository.findAll().stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());

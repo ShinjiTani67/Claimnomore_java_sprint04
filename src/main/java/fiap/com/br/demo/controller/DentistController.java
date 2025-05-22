@@ -27,7 +27,7 @@ public class DentistController {
 
     @GetMapping
     public String listDentist(Model model){
-        model.addAttribute("dentist", service.getAllDentists());
+        model.addAttribute("dentist", service.getAllDentist());
         return "dentist";
     }
 

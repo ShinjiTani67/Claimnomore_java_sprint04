@@ -1,6 +1,7 @@
 package fiap.com.br.demo.controller;
 
 import fiap.com.br.demo.dto.ClaimDTO;
+import fiap.com.br.demo.dto.UserDTO;
 import fiap.com.br.demo.repository.ClaimRepository;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -25,7 +26,7 @@ public class ClaimController {
 
     @GetMapping
     public String listClaim(Model model){
-        model.addAttribute("claims", service.getAllClaims());
+        model.addAttribute("claim", service.getAllClaims());
         return "claim";
     }
 
@@ -60,15 +61,9 @@ public class ClaimController {
 
     @GetMapping("/edit/{id}")
     public String editClaim(@PathVariable String id, Model model) {
-        try {
-            ClaimDTO claimDTO = service.findById(id);
-            model.addAttribute("claim", claimDTO);
-            return "claimformulario";
-
-        } catch (RuntimeException e) {
-            log.warning("Erro ao carregar sinistro para edição: " + e.getMessage());
-            return "redirect:/claim";
-        }
+        ClaimDTO claim = service.findById(id);
+        model.addAttribute("claim", claim);
+        return "claimformulario";
     }
 
     @GetMapping("/delete/{id}")

@@ -15,20 +15,14 @@
         <thead class="table-dark">
         <tr>
             <th>Descrição</th>
-            <th>Status</th>
-            <th>Data</th>
-            <th>Usuário</th>
-            <th>Empresa</th>
+            <th>Data do Sinistro</th>
             <th>Ações</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="claim : ${claims}">
+        <tr th:each="claim : ${claim}">
             <td th:text="${claim.description}">Descrição</td>
-            <td th:text="${claim.status}">Status</td>
-            <td th:text="${#temporals.format(claim.createdAt, 'dd/MM/yyyy')}">Data</td>
-            <td th:text="${claim.userName}">Usuário</td>
-            <td th:text="${claim.enterpriseName}">Empresa</td>
+            <td th:text="${claim.claimDate != null ? #temporals.format(claim.claimDate, 'dd/MM/yyyy') : 'Sem data'}">Data</td>
             <td>
                 <a th:href="@{/claim/edit/{id}(id=${claim.id})}" class="btn btn-warning btn-sm">Editar</a>
                 <a th:href="@{/claim/delete/{id}(id=${claim.id})}"
