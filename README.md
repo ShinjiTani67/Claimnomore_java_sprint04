@@ -28,3 +28,12 @@ https://youtu.be/3PNh-qAU-BE
 ## Instalação
 - Clone o Repositório
 https://github.com/ShinjiTani67/Claimnomore_java_sprint04.git
+
+- Conexão com o MongoDB
+após a intalação, precisa conectar com o banco de dados MongoDb pela url: mongodb://localhost:27017/claimnomore
+
+- Container Docker para o RabbitMQ
+é preciso montar um container com a aplicação, rode "docker compose up" no terminal
+
+- Rodar a aplicação com o navegador 
+então abra a url: http://localhost:8081 no seu navegador de preferencia
