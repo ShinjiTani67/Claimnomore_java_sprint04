@@ -1,23 +1,17 @@
 package fiap.com.br.demo.controller;
 
 
-import fiap.com.br.demo.dto.ClaimDTO;
 import fiap.com.br.demo.dto.EnterpriseDTO;
-import fiap.com.br.demo.entity.Enterprise;
 import fiap.com.br.demo.service.EnterpriseService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import fiap.com.br.demo.repository.EnterpriseRepository;
 
-
-import java.util.List;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/enterprise")
