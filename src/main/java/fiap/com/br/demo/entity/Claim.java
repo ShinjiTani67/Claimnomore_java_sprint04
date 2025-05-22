@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @Data
 @ToString
-@Document(collection = "sinistro")
+@Document(collection = "sinistros")
 public class Claim {
 
     @Id

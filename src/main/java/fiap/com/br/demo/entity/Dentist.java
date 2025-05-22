@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Data
 @ToString
-@Document(collection ="dentista")
+@Document(collection ="dentistas")
 public class Dentist {
 
     @Id
