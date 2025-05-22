@@ -22,6 +22,9 @@ as contas de usuários servem para exclusivamente para a verificação de sinist
 - Pitch
 https://www.youtube.com/watch?v=O5D_YSpjp6Y
 
+- Teste
+https://youtu.be/3PNh-qAU-BE
+
 ## Instalação
 - Clone o Repositório
 https://github.com/ShinjiTani67/Claimnomore_java_sprint04.git
