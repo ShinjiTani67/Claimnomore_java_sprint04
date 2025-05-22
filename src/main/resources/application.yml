@@ -65,7 +65,7 @@ server:
   port: ${SERVER_PORT:8081}
   error:
     whitelabel:
-      enabled: false
+      enabled: true
   level:
     root: INFO
     org.springframework.web: DEBUG
